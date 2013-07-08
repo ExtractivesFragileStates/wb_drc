@@ -1,0 +1,94 @@
+<!--   DRC   -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>DRC's Mineral Wealth</title>
+	<link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.4/mapbox.css' rel='stylesheet' />
+	<!--<link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />-->
+	<!--[if lte IE 8]>
+	<link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.4/mapbox.ie.css' rel='stylesheet' />
+	<![endif]-->
+	<link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/mapbox.share.css" type="text/css" />
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  
+	<script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.4/mapbox.js'></script>
+	<!--<script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>-->
+    <script src="ext/jquery.min.js"></script>
+    <script src="ext/mapbox.jquery.js"></script>
+    <script src="ext/mapbox.share.js"></script>
+</head>
+
+
+<body>
+  
+
+<div id='map'></div>
+
+<div id="content">
+
+	<div id='header' class='refresher'>Extractives in the DRC</div>
+	
+		
+	<!-- Layer switcher -->
+	<div id="map-ui" class="three-wide switcher-box">
+		  <a href="#" id="development" class="dropdown">Development</a>
+		  <a href="#" id="extractives" class="dropdown">Extractives</a>
+		  <a href="#" id="conflict" class="dropdown">Fragility</a>
+	</div>
+	
+	<div id="development-dropdown" class="two-wide switcher-box dropdown-menu">
+		  <a href="#" id="unemployment" class="switcher">Unemployment</a>
+		  <a href="#" id="poverty" class="switcher">Poverty</a>
+	</div>
+	
+	<div id="extractives-dropdown" class="two-wide switcher-box dropdown-menu">
+		  <a href="#" id="industrial" class="switcher">Industrial Mining</a>
+		  <a href="#" id="conflictMinerals" class="switcher">Conflict Minerals</a>
+	</div>
+	
+	<div id="conflict-dropdown" class="two-wide switcher-box dropdown-menu">
+		  <a href="#" id="acled" class="switcher">ACLED</a>
+		  <a href="#" id="idps" class="switcher">IPDs</a>
+	</div>
+	
+	
+	<!-- Text -->
+	<div id='text'></div>
+
+	<div class='attribution' style='display:none'>
+		<em>...</em>
+	</div>
+
+	<div class='source' style='display:none'>
+		<b>Source:</b> <a href='www.google.com' target='_blank'>USGS</a>; <a href='www.google.com' target='_blank'>Afghan Ministry of Mines</a>; <a href='www.google.com' target='_blank'>World Bank</a>
+	</div>
+
+</div>
+
+
+
+<div id='unemploymentLegend' style='display:none'>
+	<div class='title'>Areas of Interest</div>
+		<div class='legend-scale'>
+			<ul class='legend-labels'>
+			  <li><span class='mineral'></span><span class='type'>Permissive</span><span class='type'>Favorable</span><span class='type'>Prospective</span></li>
+			  <li><span class='mineral'>REE</span><img class='first'><img class='second'><img class='third'></li>
+			  <li><span class='mineral'>Gold</span><img class='first'><img class='second'><img class='third'></li>
+			  <li><span class='mineral'>Copper</span><img class='first'><img class='second'><img class='third'></li>
+			  <li><span class='mineral'>Iron</span><img class='first'><img class='second'><img class='third'></li>
+			  <li><span class='mineral'>Tin</span><img class='first'><img class='second'><img class='third'></li>
+			</ul>
+		</div>
+		<div class='legend-source'>Source: <a href="#link to source">USGS</a></div>
+	</div>
+</div>
+
+
+
+
+    <script src="script.js"></script>
+  </body>
+</html>

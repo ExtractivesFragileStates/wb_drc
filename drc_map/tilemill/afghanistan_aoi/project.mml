@@ -1,0 +1,374 @@
+{
+  "bounds": [
+    60.293,
+    29.2864,
+    74.9268,
+    38.5825
+  ],
+  "center": [
+    67.2363,
+    34.4703,
+    6
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "usgs_aoi",
+    "template_teaser": "<div class='container'>\n<div class='name'>{{{Name_Clean}}}</div>\n<div class='details'>\n    <div>Resource: <span>{{{Main_Com}}}</span></div>\n</div>\n\n<div class='details' style='clear:both;'>\n    <div class='list'>\n        <div>Est. Quantity: <span>45 MTons</span></div>\n        <div>Est. Value: <span>$46.2 billion</span></div>\n        <div>Investors: <span>None</span></div>\n    </div>\n</div>\n</div>\n",
+    "fields": [
+      "Name_Clean",
+      "Main_Com"
+    ]
+  },
+  "minzoom": 6,
+  "maxzoom": 10,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss",
+    "extractives.mss"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape",
+        "id": "countries",
+        "project": "afghanistan_aoi",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        60.94631632157445,
+        29.45374074035481,
+        71.39263557829707,
+        37.72792428539441
+      ],
+      "id": "usgs_aoi",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_join/aoi_join.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "usgs_aoi"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        68.68493349272282,
+        34.09499906909476,
+        69.49163063986495,
+        34.51248082599547
+      ],
+      "id": "aynak_sed_cu_tracts",
+      "class": "mineral",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/aynak_SedCuTracts.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "aynak_sed_cu_tracts"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        70.29873454265888,
+        36.98723376333237,
+        71.19396256542153,
+        37.728298286319294
+      ],
+      "id": "badakshan_au_lode",
+      "class": "mineral",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/badakshan_au_lode.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "badakshan_au_lode"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        66.67105185592571,
+        35.493548066617016,
+        66.90880524141564,
+        35.660625238411846
+      ],
+      "id": "balkhab_vms",
+      "class": "mineral",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/balkhab_vms.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "balkhab_vms"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        61.034663558055506,
+        33.27924582450797,
+        62.30937859083565,
+        33.9374490279654
+      ],
+      "id": "dusar-shaida_cu_prphy-fill",
+      "class": "fill",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/dusar-shaida_cu_prphy.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "dusar-shaida_cu_prphy-fill"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        61.03252144121006,
+        33.27924582450797,
+        62.30937859083565,
+        33.93715093495431
+      ],
+      "id": "dusar-shaida_sn_w-fill",
+      "class": "fill",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/dusar-shaida_sn_w.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "dusar-shaida_sn_w-fill"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        61.034663558055506,
+        33.27924582450797,
+        62.30937859083565,
+        33.9374490279654
+      ],
+      "id": "dusar-shaida_cu_prphy-pattern",
+      "class": "pattern",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/dusar-shaida_cu_prphy.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "dusar-shaida_cu_prphy-pattern"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        61.03252144121006,
+        33.27924582450797,
+        62.30937859083565,
+        33.93715093495431
+      ],
+      "id": "dusar-shaida_sn_w-pattern",
+      "class": "pattern",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/dusar-shaida_sn_w.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "dusar-shaida_sn_w-pattern"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        67.88579720942684,
+        34.649271451615206,
+        68.8004527469239,
+        34.93171003176182
+      ],
+      "id": "haji-gak_fe_sed",
+      "class": "mineral",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/haji-gak_fe_sed.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "haji-gak_fe_sed"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        62.83358758553336,
+        29.960498153968842,
+        64.32954017761728,
+        30.727782333692925
+      ],
+      "id": "khanneshin_carbonatites",
+      "class": "mineral",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/khanneshin_carbonatites.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "khanneshin_carbonatites"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        66.12790621601982,
+        31.956374043252875,
+        66.8693351347317,
+        32.66246889102607
+      ],
+      "id": "kundalan_au_lode-fill",
+      "class": "fill",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/kundalan_au_lode.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kundalan_au_lode-fill"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        66.12790621601982,
+        32.00916805281297,
+        66.8292873065128,
+        32.70055643627306
+      ],
+      "id": "kundalan_cu_prphy-fill",
+      "class": "fill",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/kundalan_cu_prphy.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kundalan_cu_prphy-fill"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        66.12790621601982,
+        32.00916805281297,
+        66.8292873065128,
+        32.70055643627306
+      ],
+      "id": "kundalan_cu_prphy-pattern",
+      "class": "pattern",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/kundalan_cu_prphy.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kundalan_cu_prphy-pattern"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        66.12790621601982,
+        31.956374043252875,
+        66.8693351347317,
+        32.66246889102607
+      ],
+      "id": "kundalan_au_lode-pattern",
+      "class": "pattern",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/kundalan_au_lode.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "kundalan_au_lode-pattern"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        67.2920460014378,
+        32.692336889916106,
+        67.8458726400176,
+        33.217090000759256
+      ],
+      "id": "zarakashan_au_lode-fill",
+      "class": "fill",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/zarakashan_au_lode.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "zarakashan_au_lode-fill"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        67.29204600143778,
+        32.71656053097082,
+        67.86727605284028,
+        33.24092187186121
+      ],
+      "id": "zarakashan_cu_prphy-fill",
+      "class": "fill",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/zarakashan_cu_prphy.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "zarakashan_cu_prphy-fill"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        67.29204600143778,
+        32.71656053097082,
+        67.86727605284028,
+        33.24092187186121
+      ],
+      "id": "zarakashan_cu_prphy-pattern",
+      "class": "pattern",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/zarakashan_cu_prphy.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "zarakashan_cu_prphy-pattern"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        67.2920460014378,
+        32.692336889916106,
+        67.8458726400176,
+        33.217090000759256
+      ],
+      "id": "zarakashan_au_lode-pattern",
+      "class": "pattern",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_minerals_warp/zarakashan_au_lode.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "zarakashan_au_lode-pattern"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "Afghanistan Areas of Interest",
+  "description": "",
+  "attribution": "",
+  "legend": ""
+}

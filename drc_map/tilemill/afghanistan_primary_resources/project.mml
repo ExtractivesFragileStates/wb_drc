@@ -1,0 +1,276 @@
+{
+  "bounds": [
+    48.8672,
+    24.3191,
+    84.6387,
+    45.1139
+  ],
+  "center": [
+    67.7157,
+    35.6022,
+    6
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "primary_extractives",
+    "fields": [],
+    "template_teaser": ""
+  },
+  "minzoom": 5,
+  "maxzoom": 12,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss",
+    "extractives.mss",
+    "terrain.mss",
+    "conflict.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "raster",
+      "extent": [
+        54.99958393868292,
+        24.99958343018079,
+        80.00041727201625,
+        40.000416763514124
+      ],
+      "id": "terrain",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/srtm/srtm_hillshade.tif",
+        "band": "1"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {
+        "band": "1"
+      },
+      "name": "terrain"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        60.5048670583138,
+        29.3615729490672,
+        74.8941278242782,
+        38.49135971069336
+      ],
+      "id": "landcover",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Google Drive/Geo-mapping the Extractives Sector in Fragile States/Afghanistan/Geodata/landcover/national landcover.shp",
+        "id": "landcover",
+        "project": "afghanistan_primary_resources",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "landcover",
+      "status": "off"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        60.472083397021485,
+        29.377064535989632,
+        74.88945114798959,
+        38.49079207602192
+      ],
+      "id": "admin3",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Google Drive/Geo-mapping the Extractives Sector in Fragile States/Afghanistan/Geodata/AdminBoundaries/adm_3/afg_admbnd_adm3_pol.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "admin3"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        60.47208339700006,
+        29.377064536000038,
+        74.88945114800003,
+        38.49079207600005
+      ],
+      "id": "primary_extractives",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Google Drive/Geo-mapping the Extractives Sector in Fragile States/Afghanistan/Geodata/Afghanistan_nolakes_resourcedevdata/afg_province data.shp",
+        "id": "primary_extractives",
+        "project": "afghanistan_primary_resources",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "primary_extractives",
+      "status": "off"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        60.47208339700006,
+        29.377064536000038,
+        74.88945114800003,
+        38.49079207600005
+      ],
+      "id": "admin2",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Google Drive/Geo-mapping the Extractives Sector in Fragile States/Afghanistan/Geodata/AdminBoundaries/adm_2/Afghan_Admin2.shp",
+        "id": "admin2",
+        "project": "afghanistan_primary_resources",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "admin2"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        59.517446168000056,
+        27.66739334500005,
+        75.88537940300007,
+        39.74936673800005
+      ],
+      "id": "admin0",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Google Drive/Geo-mapping the Extractives Sector in Fragile States/Afghanistan/Geodata/AdminBoundaries/adm_0/first level.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "admin0"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        60.49873429442,
+        29.252927116400002,
+        75.13456361837723,
+        38.70292711639994
+      ],
+      "id": "hex",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Google Drive/Geo-mapping the Extractives Sector in Fragile States/Afghanistan/Geodata/Afghanistan_ACLED_Shapefile/afg_hex_dot3_pntcnt_clip.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "hex",
+      "status": "off"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        61.4456,
+        29.43,
+        71.57390000000001,
+        37.5756
+      ],
+      "id": "incidence",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Google Drive/Geo-mapping the Extractives Sector in Fragile States/Afghanistan/Geodata/Afghanistan_ACLED_Shapefile/acled_2008.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "incidence",
+      "status": "off"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -179.58997888396897,
+        -85.051,
+        179.38330358817018,
+        82.48332318035943
+      ],
+      "id": "cities",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Data/natural-earth/10m_cultural/ne_10m_populated_places/ne_10m_populated_places.shp",
+        "id": "cities",
+        "project": "afghanistan_primary_resources",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "cities",
+      "status": "off"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -179.9999999999999,
+        -85.051,
+        180,
+        85.051
+      ],
+      "id": "admin0_cutout",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Google Drive/Geo-mapping the Extractives Sector in Fragile States/Afghanistan/Geodata/AdminBoundaries/afg_cutout.shp"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "admin0_cutout"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        60.94631632157445,
+        29.45374074035481,
+        71.39263557829707,
+        37.72792428539441
+      ],
+      "id": "usgs_aoi",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/afghanistan/project_shp/aoi_join/aoi_join.shp",
+        "id": "usgs_aoi",
+        "project": "afghanistan_primary_resources",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "usgs_aoi",
+      "status": "off"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -166.532487587878,
+        -55.11212400026875,
+        178.37210805555551,
+        71.17768427804648
+      ],
+      "id": "roads",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Data/natural-earth/10m_cultural/ne_10m_roads/ne_10m_roads.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "roads"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "Afghanistan Base",
+  "description": "",
+  "attribution": "",
+  "legend": ""
+}

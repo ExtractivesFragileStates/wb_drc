@@ -1,0 +1,49 @@
+<!-- Free Text Tooltip Template -->
+<!-- To use, delete the .wax-tooltip opening and closing tag. -->
+
+<div class='wax-tooltip'> <!-- delete -->
+<div class='name'>
+	<div class='title'>Tooltip Title</div>
+	<div class='subtitle'>Tooltip Subtitle</div>
+</div>
+<div class='text'>
+Full sentence text here, with relevant figures pulled in using mustache tags.  Every once in a while, something could probably stand to be <span class='emphasis'>emphasized</span> a bit.
+</div>
+</div> <!-- delete -->
+
+<style>
+.wax-tooltip {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #faf7f3;
+    width: 280px;
+}
+
+.wax-tooltip .name {
+    padding: 0 0 4px 4px;
+    border-bottom: 2px solid #cbc4b3;
+}
+
+.wax-tooltip .title {
+	font-weight: normal;
+    font-size: 17pt;
+    color: #624d15;
+}
+
+.wax-tooltip .subtitle {
+	font-weight: lighter;
+    font-size: 12pt;
+    color: #897a4f;
+}
+
+.wax-tooltip .text {
+    padding: 4px 0 12px 4px;
+    color: #666666;
+    font-size: 10pt;
+    line-height: 120%;
+}
+
+.wax-tooltip .emphasis {
+	font-weight: 600;
+	color: orange;
+}
+</style>

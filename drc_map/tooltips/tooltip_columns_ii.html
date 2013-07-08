@@ -1,0 +1,71 @@
+<!-- Columns Tooltip Template II -->
+<!-- To use, delete the .wax-tooltip opening and closing tag. -->
+<!-- layout not as clean as column template I, but allows text to wrap.  Needed: indent text that wraps -->
+
+<div class='wax-tooltip'> <!-- delete -->
+<div class='name'>
+	<div class='title'>Tooltip Title</div>
+	<div class='subtitle'>Tooltip Subtitle</div>
+</div>
+<ul class='details'>
+	<li>Key1:<span class='value'>Value1</span></li>
+	<li>Key2:<span class='value'>Value2 overruns the container and wraps to the next line</span></li>
+	<li>Key3:<span class='value'>Value3 <span class='emphasis'>emphasis</span></span></li>
+	<li>Key4:<span class='value'>Value4</span></li>
+</ul>
+</div> <!-- delete -->
+
+
+<style>
+.wax-tooltip {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #faf7f3;
+    width: 280px;
+}
+
+.wax-tooltip .name {
+    padding: 0 0 4px 4px;
+    border-bottom: 2px solid #cbc4b3;
+}
+
+.wax-tooltip .title {
+	font-weight: normal;
+    font-size: 17pt;
+    color: #624d15;
+}
+
+.wax-tooltip .subtitle {
+	font-weight: lighter;
+    font-size: 12pt;
+    color: #897a4f;
+}
+
+.wax-tooltip .details {
+	padding: 4px 0 4px 8px;
+    color: #666666;
+    font-size: 11pt;
+}
+
+.wax-tooltip ul {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+}
+
+.wax-tooltip ul li {
+	font-weight: bold;
+	list-style: none;
+	padding-bottom: 2px;
+}
+
+.wax-tooltip .value {
+	font-weight: normal;
+	padding-left: 8px;
+}
+
+.wax-tooltip .emphasis {
+	font-weight: 600;
+	color: orange;
+}
+</style>
