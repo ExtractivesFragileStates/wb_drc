@@ -1,4 +1,4 @@
-/*    --  DRC  --    */ 
+/*    --  DRC v1.1 --    */ 
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -50,6 +50,12 @@ table {
 	border-spacing: 0;
     }
 
+
+
+
+
+
+
 /* Typography */
 
 body,
@@ -77,6 +83,12 @@ a {
     color:#369;
     text-decoration:none;
     }
+
+
+
+
+
+
 
 
 /* Layout */
@@ -166,9 +178,18 @@ body { margin:0; padding:0; }
 
      
 #header:hover, #header:focus, .switcher-box a:hover, .switcher-box a:focus, .switcher-box > a.active {
-    background-color: #555;
     color: white;
     cursor: pointer;
+    /* original: background: rgb(85,85,85); */
+	/*  white 3D effect: http://www.colorzilla.com/gradient-editor/  */    
+background: rgb(85,85,85);
+background: -moz-linear-gradient(top, rgba(85,85,85,1) 0%, rgba(95,95,95,1) 50%, rgba(85,85,85,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(85,85,85,1)), color-stop(50%,rgba(95,95,95,1)), color-stop(100%,rgba(85,85,85,1)));
+background: -webkit-linear-gradient(top, rgba(85,85,85,1) 0%,rgba(95,95,95,1) 50%,rgba(85,85,85,1) 100%);
+background: -o-linear-gradient(top, rgba(85,85,85,1) 0%,rgba(95,95,95,1) 50%,rgba(85,85,85,1) 100%);
+background: -ms-linear-gradient(top, rgba(85,85,85,1) 0%,rgba(95,95,95,1) 50%,rgba(85,85,85,1) 100%);
+background: linear-gradient(to bottom, rgba(85,85,85,1) 0%,rgba(95,95,95,1) 50%,rgba(85,85,85,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', endColorstr='#555555',GradientType=0 );
     }
 	
 .switcher-box {
@@ -176,42 +197,42 @@ body { margin:0; padding:0; }
     width: 100%;
     left: 0px;
     top: 56px;
+    z-index: 10;
     }
 
 .switcher-box > a {
 	font: 1em/1.5em 'OswaldBook',  "Arial Narrow", sans-serif;
+	width: 100%;
     float: left;
     padding: 10px;
     border-top: 1px solid #cbc4b3;
     border-bottom: 1px solid #cbc4b3;
     border-left: 1px solid #cbc4b3;
-    background: white;
     text-align: center;
     color: #333;
+    /* original: background: white; */
+	/*  white 3D effect: http://www.colorzilla.com/gradient-editor/  */
+background: rgb(247,247,247);
+background: -moz-linear-gradient(top, rgba(247,247,247,1) 0%, rgba(255,255,255,1) 50%, rgba(247,247,247,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(247,247,247,1)), color-stop(50%,rgba(255,255,255,1)), color-stop(100%,rgba(247,247,247,1)));
+background: -webkit-linear-gradient(top, rgba(247,247,247,1) 0%,rgba(255,255,255,1) 50%,rgba(247,247,247,1) 100%);
+background: -o-linear-gradient(top, rgba(247,247,247,1) 0%,rgba(255,255,255,1) 50%,rgba(247,247,247,1) 100%);
+background: -ms-linear-gradient(top, rgba(247,247,247,1) 0%,rgba(255,255,255,1) 50%,rgba(247,247,247,1) 100%);
+background: linear-gradient(to bottom, rgba(247,247,247,1) 0%,rgba(255,255,255,1) 50%,rgba(247,247,247,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#f7f7f7',GradientType=0 );
     }
-    
-.switcher-box.dropdown-menu {
-	top: 98px;
-}
 
-/* these set the button width for all buttons in .switcher-box based on number of buttons */
-.two-wide > a {
+#content .two-wide > a {
 	width: 144px;
 }
 
-.three-wide > a {
+#content .three-wide > a {
     width: 89px;
 }
 
-/*   Use for a second set of layer buttons
-.layers#crime {top: 220px;}
-
-#crime.layers a:hover, #crime.layers a:focus, #crime.layers a.active {
-    border-left: 5px solid #333;
-    background: #e34f3f;
-    color: white;
-    }
-*/
+.switcher-box.dropdownMenu {
+	z-index: 1;
+}
     
 #text {
 	position: absolute;
@@ -236,7 +257,80 @@ body { margin:0; padding:0; }
 
 
 
-/*  Map  */
+
+
+
+/*  Menus: displayed on map, not in content bar  */
+
+.menu{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position:absolute;
+    top:40px;
+    left: 335px;
+}
+
+.menu > a {
+	font: 1em/1.5em 'OswaldBook',  "Arial Narrow", sans-serif;
+    /* original: background: white; */
+	/*  white 3D effect: http://www.colorzilla.com/gradient-editor/  */
+background: rgb(247,247,247);
+background: -moz-linear-gradient(top, rgba(247,247,247,1) 0%, rgba(255,255,255,1) 50%, rgba(247,247,247,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(247,247,247,1)), color-stop(50%,rgba(255,255,255,1)), color-stop(100%,rgba(247,247,247,1)));
+background: -webkit-linear-gradient(top, rgba(247,247,247,1) 0%,rgba(255,255,255,1) 50%,rgba(247,247,247,1) 100%);
+background: -o-linear-gradient(top, rgba(247,247,247,1) 0%,rgba(255,255,255,1) 50%,rgba(247,247,247,1) 100%);
+background: -ms-linear-gradient(top, rgba(247,247,247,1) 0%,rgba(255,255,255,1) 50%,rgba(247,247,247,1) 100%);
+background: linear-gradient(to bottom, rgba(247,247,247,1) 0%,rgba(255,255,255,1) 50%,rgba(247,247,247,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#f7f7f7',GradientType=0 );
+
+    padding: 10px;
+    border: 1px solid #cbc4b3;
+    border-bottom-width: 0;
+    width: 89px;
+    float: left;
+    margin-right: 8px;
+    margin-left: 5px;
+    text-align: center;
+    color: #333;
+    cursor:pointer;
+}
+
+.menu a:last-child {
+    border-bottom-width: 1px;
+    -webkit-border-radius: 0 0 2px 2px;
+    border-radius: 0 0 2px 2px;
+}
+
+.menu a:first-child {
+    -webkit-border-radius: 2px 2px 0 0;
+    border-radius: 2px 2px 0 0;
+}
+
+.menu > a.active, .menu > a:hover {
+    /* original: background: rgb(85,85,85); */
+	/*  white 3D effect: http://www.colorzilla.com/gradient-editor/  */    
+background: rgb(85,85,85);
+background: -moz-linear-gradient(top, rgba(85,85,85,1) 0%, rgba(95,95,95,1) 50%, rgba(85,85,85,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(85,85,85,1)), color-stop(50%,rgba(95,95,95,1)), color-stop(100%,rgba(85,85,85,1)));
+background: -webkit-linear-gradient(top, rgba(85,85,85,1) 0%,rgba(95,95,95,1) 50%,rgba(85,85,85,1) 100%);
+background: -o-linear-gradient(top, rgba(85,85,85,1) 0%,rgba(95,95,95,1) 50%,rgba(85,85,85,1) 100%);
+background: -ms-linear-gradient(top, rgba(85,85,85,1) 0%,rgba(95,95,95,1) 50%,rgba(85,85,85,1) 100%);
+background: linear-gradient(to bottom, rgba(85,85,85,1) 0%,rgba(95,95,95,1) 50%,rgba(85,85,85,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', endColorstr='#555555',GradientType=0 );
+    color: white;
+    cursor: pointer;
+}
+
+.menu.layerMenu {
+	top: 140px;
+}
+
+
+
+
+
+
+
+/*  Tooltips  */
 
 .map-tooltip {
     border:none;
@@ -277,6 +371,7 @@ body { margin:0; padding:0; }
 .map-tooltip .subtitle {
 	font-weight: lighter;
     font-size: 12pt;
+    padding-top: 6px;
     color: #897a4f;
 }
 
@@ -336,6 +431,10 @@ body { margin:0; padding:0; }
 
 
 
+
+
+
+
 /*  Legend  */
 
 .map-legends {
@@ -346,84 +445,186 @@ body { margin:0; padding:0; }
     bottom: 10px;
     font-size: 11px;
 	font: .9em/1.5em 'OpenSans', sans-serif;
-    }
-    
-.map-legends a {
-    color: rgb(51, 51, 51);
-    }
-
+}
+/*
 .map-legends .map-legend {
     width: 275px;
-    }
+}
 
 .map-legends .scale img { 
     float: left; 
-    }
-    
+}
+*/  
 
-  .map-legend {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #faf7f3;
-    width: 265px;
+.map-legend {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #faf7f3;
+	min-width: 200px;
+	max-width: 275px;
 }
 
-  .map-legend .title {
-    color: #624d15;
-    font-weight: 500;
-    font-size: 18pt;
-    text-align: center;
-    padding-bottom: 4px;
-    border-bottom: 2px solid #cbc4b3;
-    margin-bottom: 2px;
+.map-legend .title {
+	color: #624d15;
+	font-weight: 500;
+	font-size: 18pt;
+	text-align: center;
+	line-height: 18pt;
+	padding-bottom: 6px;
+	border-bottom: 2px solid #cbc4b3;
+	margin-bottom: 8px;
 }
 
-  .map-legend .legend-scale ul {
-    margin: 0;
-    margin-bottom: 5px;
-    margin-left: 4px;
-    padding: 0;
-    float: left;
-    text-align:right;
-    list-style: none;
-    }
-  .map-legend .legend-scale ul li {
-    list-style: none;
-    margin-left: 0;
-    line-height: 18px;
-    }
-  .map-legend ul.legend-labels li .type {
-    display: block;
-    float: right;
-    height: 18px;
-    width: 70px;
-    font-size: 90%;
-    text-align: center;
-    }
-  .map-legend ul.legend-labels li img {
-    display: block;
-    float: right;
-    height: 18px;
-    width: 70px;
-    }
-  .map-legend ul.legend-labels li .mineral {
-    margin-right: 4px;
-    font-size: 90%;
-    }
-  .map-legend .legend-source {
-    font-size: 90%;
-    font-weight: bold;
-    color: #999;
-    clear: both;
-    }
-  .map-legend a {
-	color: #85c5d4;
+.map-legend .legend-source {
+	color: #555;
+	clear: both;
+}
+
+.map-legend a {
+	color: #369;
 	font-weight: normal;
-    }
-    
-  .map-legend a:hover{
+}
+
+.map-legend a:hover{
 	text-decoration: underline;
-	color: #AAAAAA;
-	}
+	color: #999;
+}
+
+
+
+/*  Table Legend  */
+.map-legendTable .legend-scale ul {
+	margin: 0;
+	margin-bottom: 5px;
+	margin-left: 4px;
+	padding: 0;
+	float: left;
+	text-align:right;
+	list-style: none;
+}
+
+.map-legendTable .legend-scale ul li {
+	list-style: none;
+	margin-left: 0;
+	line-height: 18px;
+}
+
+.map-legendTable ul.legend-labels li .type {
+	display: block;
+	float: right;
+	height: 18px;
+	width: 70px;
+	font-size: 90%;
+	text-align: center;
+}
+
+.map-legendTable ul.legend-labels li img {
+	display: block;
+	float: right;
+	height: 18px;
+	width: 70px;
+}
+
+.map-legendTable ul.legend-labels li .mineral {
+	margin-right: 4px;
+	font-size: 90%;
+}
+
+
+
+/*  Horizontal Graduated Legend  */
+.map-legendGraduated .legend-title {
+	text-align: left;
+	margin-bottom: 8px;
+	font-weight: bold;
+	font-size: 90%;
+}
+
+.map-legendGraduated .legend-scale ul {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+}
+
+.map-legendGraduated .three-wide li:first-child {
+	margin-left: 60px;
+}
+
+.map-legendGraduated .six-wide ul li, .map-legendGraduated .six-wide li span {
+	width:45px !important;
+}
+
+.map-legendGraduated .legend-scale ul li {
+	display: block;
+	float: left;
+	width: 50px;
+	margin-bottom: 6px;
+	text-align: center;
+	list-style: none;
+}
+
+.map-legendGraduated ul.legend-labels li span {
+	display: block;
+	float: left;
+	height: 15px;
+	width: 50px;
+}
+
+
+
+/*  Vertical Categorized Legend  */
+.map-legendCategorized .legend-scale ul {
+	margin: 0;
+	margin-bottom: 5px;
+	padding: 0;
+	float: left;
+	list-style: none;
+}
+
+.map-legendCategorized .legend-scale ul li {
+	list-style: none;
+	margin-left: 0;
+	line-height: 18px;
+	margin-bottom: 2px;
+}
+
+.map-legendCategorized ul.legend-labels li span {
+	display: block;
+	float: left;
+	height: 16px;
+	width: 30px;
+	margin-right: 5px;
+	margin-left: 0;
+	border: 1px solid #999;
+}
+
+
+/*  Vertical Graduated Legend  */
+.map-legendVerticalGraduated .legend-scale ul {
+	margin: 0;
+	margin-bottom: 5px;
+	padding: 0;
+	float: left;
+	list-style: none;
+}
+
+.map-legendVerticalGraduated .legend-scale ul li {
+	list-style: none;
+	margin-left: 0;
+	line-height: 20px;
+}
+
+.map-legendVerticalGraduated ul.legend-labels li span {
+	display: block;
+	float: left;
+	height: 20px;
+	width: 30px;
+	margin-right: 5px;
+	margin-left: 0;
+}
+
+
+
 
 
 
@@ -431,7 +632,7 @@ body { margin:0; padding:0; }
 /*  Zoom Control  */
 .leaflet-control-zoom{
 	top: 4px;
-	left: 345px;
+	left: 340px;
 	}
 	
 .leaflet-control-zoom-in{
@@ -461,6 +662,9 @@ body { margin:0; padding:0; }
 	border-bottom: 0 !important;
 	border-left: 1px solid #ccc;
 }
+
+
+
 
 
 
@@ -552,6 +756,12 @@ body { margin:0; padding:0; }
     text-align: center;
     border: 1px solid #ccc;
     }
+
+
+
+
+
+
 
 /* Animation */
 
