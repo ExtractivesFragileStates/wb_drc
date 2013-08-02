@@ -33,21 +33,21 @@
 	
 		
 	<!-- Layer switcher -->
+	<!-- note: for any button that runs to two lines, to set inline style='padding: 3px 0 2px 0; line-height: 1.3em;' -->
 	<div id="map-ui" class="three-wide switcher-box">
 		  <a href="#" id="development" class="dropdown">Development</a>
 		  <a href="#" id="extractives" class="dropdown">Extractives</a>
 		  <a href="#" id="conflict" class="dropdown">Fragility</a>
 	</div>
 	
-	<div id="development-dropdown" class="three-wide switcher-box dropdownMenu">
-		  <a href="#" id="unemployment" class="addMapMenu">Unemployment</a>
-		  <a href="#" id="poverty" class="addMapMenu">Poverty</a>
-		  <a href="#" id="education" class="addMapMenu">Education</a>
+	<div id="development-dropdown" class="two-wide switcher-box dropdownMenu">
+		  <a href="#" id="unemployment" class="panelCheckboxMenu">Unemployment</a>
+		  <a href="#" id="poverty" class="panelCheckboxMenu">Poverty</a>
 	</div>
 	
 	<div id="extractives-dropdown" class="two-wide switcher-box dropdownMenu">
-		  <a href="#" id="conflictMinerals" class="panelCheckboxMenu">Conflict Minerals</a>
-		  <a href="#" id="industrial" class="panelCheckboxMenu">Industrial Mining</a>
+		  <a href="#" id="concessions" class="addMapMenu">Industrial Mines</a>
+		  <a href="#" id="conflictMinerals" class="panelCheckboxMenu">Artisanal Mines</a>
 	</div>
 	
 	<div id="conflict-dropdown" class="two-wide switcher-box dropdownMenu">
@@ -58,27 +58,17 @@
 	
 	
 	<!-- Map Menus -->
+<!-- insert for permanent radio buttons on map top left - in style file, uncomment .menu.layerMenu 
 	<div class='menu permanentMenu'>
-		<a href="#" id="conflictMineralsii" class="mapRadioMenu">Mines</a>
-		<a href="#" id="acledii" class="mapRadioMenu">Concessions</a>
+		<a href="#" id="radioConcessions" class="mapRadioMenu">Concessions</a>
+		<a href="#" id="radioArtisanal" class="mapRadioMenu">Artisanal Mines</a>
 	</div>
+ -->
 	
-	<div id='unemployment-menu' class='menu layerMenu'>
-		<a href="#" id="conflictMineralsiii" class="mapCheckboxMenu">ACLED1</a>
-		<a href="#" id="aclediii" class="mapCheckboxMenu">IDPS1</a>
+	<div id='concessions-menu' class='menu layerMenu'>
+		<a href="#" id="mineConcessions" class="mapCheckboxMenu" style='padding: 3px 0 2px 0; line-height: 1.3em;'>Mineral Concessions</a>
+		<a href="#" id="oilConcessions" class="mapCheckboxMenu">Oil Concessions</a>
 	</div>
-	
-
-	<div id='poverty-menu' class='menu layerMenu'>
-		<a href="#" id="conflictMineralsiv" class="mapCheckboxMenu">ACLED2</a>
-		<a href="#" id="aclediv" class="mapCheckboxMenu">IDPS2</a>
-	</div>
-	
-	<div id='education-menu' class='menu layerMenu'>
-		<a href="#" id="conflictMineralsv" class="mapCheckboxMenu">ACLED2</a>
-		<a href="#" id="acledv" class="mapCheckboxMenu">IDPS2</a>
-	</div>
-	
 	
 	
 	<!-- Text -->
@@ -101,7 +91,9 @@
 <!-- Unemployment - vertical graduated -->
 <div id='unemploymentLegend' style='display:none'>
 <div class='map-legendVerticalGraduated'>
-	<div class='title'>Unemployment, 2005</div>
+	<div class='legend-name'>
+		<div class='legend-title'>Unemployment, 2005</div>
+	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
 			<li><span style='background:#FDCC8A;'></span>0 - 10%</li>
@@ -115,10 +107,12 @@
 </div>
 
 
-<!-- Poverty - vertical graduated -->
+<!-- Poverty Legend - vertical graduated -->
 <div id='povertyLegend' style='display:none'>
 <div class='map-legendVerticalGraduated'>
-	<div class='title'>Poverty, 2005</div>
+	<div class='legend-name'>
+		<div class='legend-title'>Poverty, 2005</div>
+	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
 			<li><span style='background:#FDCC8A;'></span>40% - 50%</li>
@@ -132,11 +126,31 @@
 </div>
 
 
+<!-- Mine Concession Legend - vertical categorized -->
+<div id='concessionsLegend' style='display:none'>
+<div class='map-legendVerticalCategorized'>
+	<div class='legend-name'>
+		<div class='legend-title'>Mineral Concessions</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#fffea5;'></span>Active</li>
+			<li><span style='background:#fcaf51;'></span>Application</li>
+			<li><span style='background:#ff540e;'></span>Inactive</li>
+		</ul>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href="#">IPIS</a> Mine Concession Data, 2010</div>
+</div>
+</div>
+
+
 <!-- Conflict Minerals - horizontal graduated -->
 <div id='conflictMineralsLegend' style='display:none'>
 <div class='map-legendGraduated'>
-	<div class='title'>Artisanal Mining Supply Chain</div>
-	<div class='legend-scale six-wide'>
+	<div class='legend-name'>
+		<div class='legend-title'>Artisanal Mining Supply Chain</div>
+	</div>
+	<div class='legend-scale'>
 		<ul class='legend-labels'>
 			<li><span style='background:#B30000;'></span></li>
 			<li><span style='background:#d1351d;'></span>upstream</li>
@@ -154,8 +168,10 @@
 <!-- ACLED - horizontal graduated -->
 <div id='acledLegend' style='display:none'>
 <div class='map-legendGraduated'>
-	<div class='title'>Conflict Density</div>
-	<div class='legend-scale six-wide'>
+	<div class='legend-name'>
+		<div class='legend-title'>Conflict Density</div>
+	</div>
+	<div class='legend-scale'>
 		<ul class='legend-labels'>
 			<li><span style='background:#FFFFFF;'></span>0</li>
 			<li><span style='background:#FEF0D9;'></span>1 - 10</li>
@@ -172,8 +188,10 @@
 
 <!-- IDPs - vertical categorized -->
 <div id='idpLegend' style='display:none'>
-<div class='map-legendCategorized'>
-	<div class='title'>IDPs</div>
+<div class='map-legendVerticalCategorized'>
+	<div class='legend-name'>
+		<div class='legend-title'>IDPs, April 2013</div>
+	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
 			<li><img src='https://dl.dropboxusercontent.com/u/49790262/drc_idp_icon_16_30.png' style='height:16px; width:30px; border:1px solid #CCC; margin-right: 5px;'>Regions with IDP Presence</li> <!-- The box here is 30px wide, 16px high, 1px border -->

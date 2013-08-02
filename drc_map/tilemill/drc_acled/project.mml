@@ -1,0 +1,87 @@
+{
+  "bounds": [
+    11.4258,
+    -14.2644,
+    32.8711,
+    5.9658
+  ],
+  "center": [
+    24.5325,
+    -3.9629,
+    6
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "hex",
+    "template_teaser": "<!-- Free Text Tooltip Template -->\n<!-- To use, delete the .wax-tooltip opening and closing tag. -->\n\n<div class='name'>\n\t<div class='title'>{{{NOM}}}</div>\n</div>\n<div class='text'>\nBetween 2008 and 2012, there were <span class='emphasis'>{{{PNTCNT}}}</span> violent incidents reported by the ACLED database.\n</div>\n\n<style>\n.wax-tooltip {\n    font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    background-color: #faf7f3;\n    width: 280px;\n}\n\n.wax-tooltip .name {\n    padding: 0 0 4px 4px;\n    border-bottom: 2px solid #cbc4b3;\n}\n\n.wax-tooltip .title {\n\tfont-weight: normal;\n    font-size: 17pt;\n    color: #624d15;\n}\n\n.wax-tooltip .subtitle {\n\tfont-weight: lighter;\n    font-size: 12pt;\n    color: #897a4f;\n}\n\n.wax-tooltip .text {\n    padding: 4px 0 12px 4px;\n    color: #666666;\n    font-size: 10pt;\n    line-height: 120%;\n}\n\n.wax-tooltip .emphasis {\n\tfont-weight: 600;\n\tcolor: orange;\n}\n</style>",
+    "fields": [
+      "PNTCNT"
+    ]
+  },
+  "minzoom": 0,
+  "maxzoom": 10,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape",
+        "id": "countries",
+        "project": "drc_acled",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        12.129004902024732,
+        -13.939453554946432,
+        31.42250854707723,
+        5.7151746564743995
+      ],
+      "id": "hex",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/project_shp/hex/drc_hex_60k_4326_pnt_names.shp",
+        "id": "hex",
+        "project": "drc_acled",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "hex"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        12.200000000000001,
+        -16.5333,
+        40.8167,
+        5.18
+      ],
+      "id": "incidence",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/ACLED_DRC_shp/XYDr_Congo.shp"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "incidence"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "DRC ACLED",
+  "description": "",
+  "attribution": "",
+  "legend": ""
+}

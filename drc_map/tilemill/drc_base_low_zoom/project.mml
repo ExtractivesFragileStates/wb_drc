@@ -1,0 +1,253 @@
+{
+  "bounds": [
+    -180,
+    -85.0511,
+    180,
+    85.0511
+  ],
+  "center": [
+    23.6865,
+    -3.3818,
+    3
+  ],
+  "format": "png",
+  "interactivity": false,
+  "minzoom": 0,
+  "maxzoom": 6,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss",
+    "terrain.mss",
+    "labels.mss",
+    "water.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "raster",
+      "extent": [
+        9.999583454395179,
+        -15.000416545624999,
+        35.00041678772851,
+        10.000416787708337
+      ],
+      "id": "terrain",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/srtm/srtm_hillshade.tif",
+        "band": "1"
+      },
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {
+        "band": "1"
+      },
+      "name": "terrain"
+    },
+    {
+      "geometry": "raster",
+      "extent": [
+        -179.9999999749438,
+        -85.051,
+        179.9999999749438,
+        85.051
+      ],
+      "id": "terrain_low_zoom",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Data/natural-earth/10m_raster/SR_HR/SR_HR_Warped_Colored.tif"
+      },
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "terrain_low_zoom"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        12.205664553597655,
+        -13.455999261720857,
+        31.277300040527873,
+        5.386098153609111
+      ],
+      "id": "admin3",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/project_shp/cod/cod_boundaries/cod_admin3_lines.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "admin3"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        12.20566455359765,
+        -13.45599926172078,
+        31.277300040527866,
+        5.386098153609149
+      ],
+      "id": "admin2",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/project_shp/cod/cod_boundaries/cod_admin2_lines.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "admin2"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        12.205664553597645,
+        -13.45599926172078,
+        31.277300040527862,
+        5.386098153609162
+      ],
+      "id": "admin1",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/project_shp/cod/cod_boundaries/cod_admin1_lines.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "admin1"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -17.535236000360413,
+        -34.8398280001842,
+        51.41303200019511,
+        37.349616999941915
+      ],
+      "id": "admin0_africa",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/project_shp/cod/cod_boundaries/cod_int_no_lakes.shp",
+        "id": "admin0_africa",
+        "project": "drc_base",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "admin0_africa"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -17.535236000360413,
+        -34.8398280001842,
+        51.41303200019511,
+        37.349616999941915
+      ],
+      "id": "admin0_africa_line",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/project_shp/cod/cod_boundaries/cod_int_no_lakes_line_cut.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "admin0_africa_line"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        28.317750120000003,
+        -9.59111990999926,
+        34.853352120018705,
+        2.4000000299679782
+      ],
+      "id": "lakes",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/project_shp/cod/cod_waters/cod_lakeresa_rgc.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "lakes"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        12.267090000000001,
+        -13.217729939999126,
+        30.486930120000004,
+        5.227139969999552
+      ],
+      "id": "rivers",
+      "class": "river",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/project_shp/cod/cod_waters/cod_watcrsa_rvr_rgc.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "rivers"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        12.267086040006584,
+        -13.41956237522523,
+        31.27563288001679,
+        5.386097794922833
+      ],
+      "id": "rivers_fine",
+      "class": "river",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/project_shp/cod/cod_waters/cod_watcrsl_rvr_rgc.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "rivers_fine"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        28.481469572374994,
+        -9.419342934019161,
+        34.100299963208734,
+        2.1751660199277265
+      ],
+      "id": "lakes_border",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/project_shp/cod/cod_boundaries/cod_admin0_lakes_border.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "lakes_border"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -179.99999999999994,
+        -85.051,
+        180,
+        85.051
+      ],
+      "id": "ocean",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Data/natural-earth/10m_physical/ne_10m_ocean/ne_10m_ocean.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "ocean"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "DRC Base Low Zoom",
+  "description": "",
+  "attribution": ""
+}

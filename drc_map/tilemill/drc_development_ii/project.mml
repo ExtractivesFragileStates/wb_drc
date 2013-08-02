@@ -1,0 +1,64 @@
+{
+  "bounds": [
+    12.041,
+    -13.9234,
+    31.7285,
+    5.7909
+  ],
+  "center": [
+    23.9941,
+    -3.0089,
+    6
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "un_mdg",
+    "template_teaser": "<!-- Columns Tooltip Template. -->\n<!-- Text in the value column does not wrap correctly and thus the layout will break if any line extends past the container's 280px.  If you need the lines to wrap, use tooltip_column_ii -->\n<div class='name'>\n\t<div class='title'>{{{NOM}}}</div>\n</div>\n<div class='details'>\n    <div class='col key'> \n        <div>Unemployment:</div>\n    </div>\n    <div class='col value'> \n        <div>{{{nmply_05}}} %</div>\n    </div>\n</div>\n\n<style>\n.wax-tooltip {\n    font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    background-color: #faf7f3;\n    width: 280px;\n}\n\n.wax-tooltip .name {\n    padding-bottom: 4px;\n    border-bottom: 2px solid #cbc4b3;\n}\n\n.wax-tooltip .title {\n\tfont-weight: normal;\n    font-size: 17pt;\n    color: #624d15;\n}\n\n.wax-tooltip .subtitle {\n\tfont-weight: lighter;\n    font-size: 12pt;\n    color: #897a4f;\n}\n\n.wax-tooltip .details {\n    padding: 4px 0 4px 4px;\n    color: #666666;\n    font-size: 11pt;\n}\n\n.wax-tooltip .col {\n\tfloat: left;\n\tmargin-bottom: 4px;\n}\n\n.wax-tooltip .col > div {\n\tpadding-bottom: 2px;\n}\n\n.wax-tooltip .key {\n    padding-right: 4px;\n    font-weight: 600;\n}\n\n.wax-tooltip .emphasis {\n\tfont-weight: 600;\n\tcolor: orange;\n}\n\n</style>"
+  },
+  "minzoom": 0,
+  "maxzoom": 10,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape"
+      },
+      "status": "off"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        12.205664553597645,
+        -13.45599926172078,
+        31.277300040527862,
+        5.386098153609162
+      ],
+      "id": "un_mdg",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/project_shp/un_mdg_stats.shp",
+        "id": "un_mdg",
+        "project": "drc_development_ii",
+        "srs": ""
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "un_mdg"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "DRC Unemployment",
+  "description": "",
+  "attribution": "",
+  "legend": ""
+}

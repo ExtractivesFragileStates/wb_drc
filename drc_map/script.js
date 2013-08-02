@@ -41,12 +41,19 @@ mapLayers = {
 		text: development,
 		legend: document.getElementById('povertyLegend').innerHTML
 	},
-	industrial:{
+	mineConcessions:{
 		latlon:	[-3.4,21],
 		zoom: 5,
-		id: 'helsinki.drc_labels',
+		id: 'helsinki.drc_concessions',
 		text: extractives,
-		legend: '<div>coming soon...</div>'
+		legend: document.getElementById('concessionsLegend').innerHTML
+	},
+	oilConcessions:{
+		latlon:	[-3.4,21],
+		zoom: 5,
+		id: 'helsinki.drc_oil_concessions',
+		text: extractives,
+		legend: document.getElementById('concessionsLegend').innerHTML
 	},
 	conflictMinerals:{
 		latlon:	[-2.4,26.5],
@@ -55,63 +62,21 @@ mapLayers = {
 		text: extractives,
 		legend: document.getElementById('conflictMineralsLegend').innerHTML
 	},
-	conflictMineralsii:{
+	mineConcessions_ii:{
 		latlon:	[-3.4,21],
+		zoom: 5,
+		id: 'helsinki.drc_concessions',
+		text: extractives,
+		legend: document.getElementById('concessionsLegend').innerHTML
+	},
+	conflictMinerals_ii:{
+		latlon:	[-2.4,26.5],
 		zoom: 6,
 		id: 'helsinki.map-s2s3eamy',
 		text: extractives,
 		legend: document.getElementById('conflictMineralsLegend').innerHTML
 	},
-	conflictMineralsiii:{
-		latlon:	[-3.4,21],
-		zoom: 5,
-		id: 'helsinki.map-s2s3eamy',
-		text: extractives,
-		legend: document.getElementById('conflictMineralsLegend').innerHTML
-	},
-	conflictMineralsiv:{
-		latlon:	[-3.4,21],
-		zoom: 5,
-		id: 'helsinki.map-s2s3eamy',
-		text: extractives,
-		legend: document.getElementById('conflictMineralsLegend').innerHTML
-	},
-	conflictMineralsv:{
-		latlon:	[-3.4,21],
-		zoom: 5,
-		id: 'helsinki.map-s2s3eamy',
-		text: extractives,
-		legend: document.getElementById('conflictMineralsLegend').innerHTML
-	},
 	acled:{
-		latlon:	[-3.4,21],
-		zoom: 5,
-		id: 'helsinki.drc_acled',
-		text: conflict,
-		legend: document.getElementById('acledLegend').innerHTML
-	},
-	acledii:{
-		latlon:	[-3.4,21],
-		zoom: 5,
-		id: 'helsinki.drc_acled',
-		text: conflict,
-		legend: document.getElementById('acledLegend').innerHTML
-	},
-	aclediii:{
-		latlon:	[-3.4,21],
-		zoom: 5,
-		id: 'helsinki.drc_acled',
-		text: conflict,
-		legend: document.getElementById('acledLegend').innerHTML
-	},
-	aclediv:{
-		latlon:	[-3.4,21],
-		zoom: 5,
-		id: 'helsinki.drc_acled',
-		text: conflict,
-		legend: document.getElementById('acledLegend').innerHTML
-	},
-	acledv:{
 		latlon:	[-3.4,21],
 		zoom: 5,
 		id: 'helsinki.drc_acled',
@@ -147,11 +112,8 @@ var eventHandlers = {
 		eventHandlers.removeAll();
 		firstChildElement.trigger('click');
 
-		// change z-index on dropdown menus
+		// change z-index on dropdown menus and move dropdown
 		eventHandlers.changeZ($(this));
-
-		// change #text content and move down
-		$('#text').html(mapLayers[firstChildElement.attr('id')]['text']);
 		eventHandlers.textMenuDown();
 	},
 	addMapMenu: function(e) {
@@ -179,22 +141,23 @@ var eventHandlers = {
 		//change content in #text 
 		$('#text').html(mapLayers[switcherElement.attr('id')]["text"])				
 	},
-	mapRadioMenu: function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		var elementId = $(this).attr('id');
-		var layer = L.mapbox.tileLayer(mapLayers[elementId]["id"])
-		
-		// toggle clicked layers on/off
-		//if (map.hasLayer(layer)) {
-		if ($(this).hasClass('active')) {
-            radioGroup.clearLayers();
-            $(this).removeClass('active');
-        } else {
-        	radioGroup.addLayer(layer);
-            $(this).addClass('active');
-        }
-	},
+// 	mapRadioMenu: function(e) {
+// 		e.preventDefault();
+// 		e.stopPropagation();
+// 		var elementId = $(this).attr('id');
+// 		var layer = L.mapbox.tileLayer(mapLayers[elementId]["id"])
+// 		
+// 		// toggle clicked layers on/off
+// 		//if (map.hasLayer(layer)) {
+// 		if ($(this).hasClass('active')) {
+// 			//eventHandlers.radioLayers(radioGroup)
+//             radioGroup.clearLayers();
+//             $(this).removeClass('active');
+//         } else {
+//         	radioGroup.addLayer(layer);
+//             $(this).addClass('active');
+//         }
+// 	},
 	panelCheckboxMenu: function(e) {
 		e.preventDefault();
 		e.stopPropagation();
@@ -204,7 +167,10 @@ var eventHandlers = {
 		eventHandlers.activateDeactivate($(this));
 		eventHandlers.clearLayersLegends();
 		eventHandlers.switchLayer(switcherElement);
-
+		
+		// hide mapCheckboxMenu
+		$('.layerMenu').hide();
+		
 		//change content in #text 
 		$('#text').html(mapLayers[switcherElement.attr('id')]["text"])
 	},
@@ -214,6 +180,8 @@ var eventHandlers = {
 
 		// remove layers/legends, move dropdowns up, change text to intro, and reset view
 		eventHandlers.removeAll();
+			//remove mapRadioButtons
+			radioGroup.clearLayers();
 		eventHandlers.textMenuUp();
 		$('#text').html(baseLayer['text']);
 		map.setView(baseLayer["latlon"], baseLayer["zoom"]);
@@ -232,12 +200,12 @@ var eventHandlers = {
 		}
 	},
 	textMenuDown: function() {
-		$('.dropdownMenu').animate( { 'top': '98px' }, 100 );
-		$('#text').animate( { 'top': '145px' }, 100 );
+		$('.dropdownMenu').animate( { 'top': '98px' }, 150 );
+		$('#text').animate( { 'top': '145px' }, 150 );
 	},
 	textMenuUp: function() {
-		$('.dropdownMenu').animate( { 'top': '56px' }, 100 );
-		$('#text').animate( { 'top': '100px' }, 100 );
+		$('.dropdownMenu').animate( { 'top': '56px' }, 150 );
+		$('#text').animate( { 'top': '100px' }, 150 );
 	},
 	removeAll: function() {
 		eventHandlers.clearLayersLegends();
@@ -274,6 +242,27 @@ var eventHandlers = {
 	}
 };
 
+// Map Radio Buttons
+function addRadioButton(mapId, elementId, zIndex) {
+	var layer = L.mapbox.tileLayer(mapId)
+    layer.setZIndex(zIndex);
+	
+    $('#' + elementId).on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (map.hasLayer(layer)) {
+        	//map.removeLayer(layer);
+            radioGroup.removeLayer(layer);
+            $(this).removeClass('radioActive');
+        } else {
+            //map.addLayer(layer);
+            radioGroup.addLayer(layer);
+            this.className = 'radioActive';
+        }
+    });
+};
+
 
 
 // Initialize Map
@@ -292,14 +281,18 @@ for(i = 0; i < baseLayer["id"].length; i++){
 	map.addLayer(L.mapbox.tileLayer(baseLayer["id"][i][0], {zIndex: baseLayer["id"][i][1]} ));
 }
 
-// bind all event functions to their elements
-$(document).ready(function() {
-	eventHandlers.init();
-});
-
 // Add Intro Text, Zoom Control, Initialize an empty Layer Group, and hide all non-permanent menus
 $('#text').html(baseLayer["text"]);
 new L.Control.Zoom({ position: 'topleft' }).addTo(map);
 var group = L.layerGroup().addTo(map);
 var radioGroup = L.layerGroup().addTo(map);
 $('.layerMenu').hide();
+
+// bind event functions to their elements
+$(document).ready(function() {
+	eventHandlers.init();
+});
+
+// bind map radio buttons to elements
+addRadioButton('helsinki.map-s2s3eamy', 'radioArtisanal', 999);
+addRadioButton('helsinki.drc_concessions', 'radioConcessions', 998);

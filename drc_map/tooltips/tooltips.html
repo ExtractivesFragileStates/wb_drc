@@ -1,0 +1,164 @@
+<!-- Tooltip Templates -->
+<!-- To use, copy between start and end copy -->
+
+
+<!-- Columns i  -  Text in the value column does not wrap correctly and thus the layout will break if any line extends past the container's 280px.  If you need the lines to wrap, use tooltip_column_ii -->
+<div class='map-tooltip'> 
+<!-- start copy -->
+<div class='name'>
+	<div class='title'>Tooltip Title</div>
+	<div class='subtitle'>Tooltip Subtitle</div>
+</div>
+<div class='details'>
+    <div class='col key'> 
+        <div>Key1:</div>
+        <div>Key2:</div>
+    </div>
+    <div class='col value'> 
+        <div>Value1 <span class='emphasis'>Emphasis</span></div>
+        <div>Value2 Without Emphasis</div>
+    </div>
+    <div class='clear'></div>
+</div>
+<!-- end copy -->
+</div>
+
+
+<div style='height:20px'></div>
+
+
+<!-- Columns ii  -  layout not as clean as column template I, but allows text to wrap.  Needed: indent text that wraps -->
+<div class='map-tooltip'> 
+<!-- start copy -->
+<div class='name'>
+	<div class='title'>Tooltip Title</div>
+	<div class='subtitle'>Tooltip Subtitle</div>
+</div>
+<ul class='details'>
+	<li>Key1:<span class='value'>Value1</span></li>
+	<li>Key2:<span class='value'>Value2 overruns the container and wraps to the next line</span></li>
+	<li>Key3:<span class='value'>Value3 <span class='emphasis'>emphasis</span></span></li>
+	<li>Key4:<span class='value'>Value4</span></li>
+</ul>
+<div class='clear'></div>
+<!-- end copy -->
+</div> 
+
+
+<div style='height:20px'></div>
+
+
+<!-- Free Text -->
+<div class='map-tooltip'> 
+<!-- start copy -->
+<div class='name'>
+	<div class='title'>Tooltip Title</div>
+	<div class='subtitle'>Tooltip Subtitle</div>
+</div>
+<div class='text'>
+Full sentence text here, with relevant figures pulled in using mustache tags.  Every once in a while, something could probably stand to be <span class='emphasis'>emphasized</span> a bit.
+</div>
+<!-- end copy -->
+</div> 
+
+
+<div style='height:20px'></div>
+
+
+<!-- Single Title -->
+<div class='map-tooltip'> 
+<!-- start copy -->
+<div class='name' style='border: 0;'>
+	<div class='title'>Solo Title</div>
+	<div class='subtitle'>And an Optional Subtitle</div>
+</div>
+<!-- end copy -->
+</div> 
+
+
+<style>
+.map-tooltip {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #faf7f3;
+    width: 280px;
+}
+
+.map-tooltip .name {
+    padding: 0 0 4px 4px;
+    border-bottom: 2px solid #cbc4b3;
+}
+
+.map-tooltip .title {
+	font-weight: normal;
+    font-size: 17pt;
+    color: #624d15;
+}
+
+.map-tooltip .subtitle {
+	font-weight: lighter;
+    font-size: 12pt;
+    color: #897a4f;
+}
+
+.map-tooltip .details {
+    padding: 4px 0 4px 8px;
+    color: #666666;
+    font-size: 11pt;
+}
+
+.map-tooltip .emphasis {
+	font-weight: 600;
+	color: orange;
+}
+
+.map-tooltip .clear {
+	clear: both;
+}
+
+
+/*  Column i  */
+.map-tooltip .col {
+	float: left;
+	margin-bottom: 4px;
+}
+
+.map-tooltip .col > div {
+	padding-bottom: 2px;
+}
+
+.map-tooltip .key {
+    padding-right: 4px;
+    font-weight: 600;
+}
+
+
+/*  Column ii  */
+.map-tooltip ul {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+}
+
+.map-tooltip ul li {
+	font-weight: bold;
+	list-style: none;
+	padding-bottom: 2px;
+}
+
+.map-tooltip .value {
+	font-weight: normal;
+	padding-left: 8px;
+}
+
+
+/*  Free Text  */
+.map-tooltip .text {
+    padding: 4px 0 12px 4px;
+    color: #666666;
+    font-size: 10pt;
+    line-height: 120%;
+}
+
+
+</style>

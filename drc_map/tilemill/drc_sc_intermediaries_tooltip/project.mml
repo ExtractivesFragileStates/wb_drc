@@ -1,0 +1,54 @@
+{
+  "bounds": [
+    15.3809,
+    -11.8966,
+    35.376,
+    4.448
+  ],
+  "center": [
+    27.8174,
+    -3.6091,
+    6
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "intermediaries",
+    "template_teaser": "<!-- Columns Tooltip Template II -->\n<!-- To use, delete the .wax-tooltip opening and closing tag. -->\n<!-- layout not as clean as column template I, but allows text to wrap.  Needed: indent text that wraps -->\n\n<div class='name'>\n\t<div class='title'>{{{name}}}</div>\n\t<div class='subtitle'>{{{NOM}}} Territory</div>\n</div>\n<ul class='details'>\n\t<li>Trades To:<span class='value'>{{{trade}}}</span></li>\n</ul>\n\n\n<style>\n.wax-tooltip {\n    font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    background-color: #faf7f3;\n    width: 280px;\n}\n\n.wax-tooltip .name {\n    padding: 0 0 4px 4px;\n    border-bottom: 2px solid #cbc4b3;\n}\n\n.wax-tooltip .title {\n\tfont-weight: normal;\n    font-size: 17pt;\n    color: #624d15;\n}\n\n.wax-tooltip .subtitle {\n\tfont-weight: lighter;\n    font-size: 12pt;\n    color: #897a4f;\n}\n\n.wax-tooltip .details {\n\tpadding: 4px 0 4px 8px;\n    color: #666666;\n    font-size: 11pt;\n}\n\n.wax-tooltip ul {\n\tmargin: 0;\n\tpadding: 0;\n\tfloat: left;\n\tlist-style: none;\n}\n\n.wax-tooltip ul li {\n\tfont-weight: bold;\n\tlist-style: none;\n\tpadding-bottom: 2px;\n}\n\n.wax-tooltip .value {\n\tfont-weight: normal;\n\tpadding-left: 8px;\n}\n\n.wax-tooltip .emphasis {\n\tfont-weight: 600;\n\tcolor: orange;\n}\n</style>",
+    "fields": [
+      "name",
+      "trade"
+    ]
+  },
+  "minzoom": 0,
+  "maxzoom": 10,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "point",
+      "extent": [
+        15.70722,
+        -11.66667,
+        35,
+        4.18292
+      ],
+      "id": "intermediaries",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/IPIS/Artisanal mining/edrc_artisanal_mines/edrc_trade_all/edrc_trade_join_terr_name.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "intermediaries"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "DRC Supply Chain Intermediaries Tooltip",
+  "description": "",
+  "attribution": "",
+  "legend": ""
+}

@@ -1,0 +1,73 @@
+{
+  "bounds": [
+    16.3806,
+    -13.7271,
+    31.388,
+    5.511
+  ],
+  "center": [
+    25.752,
+    -3.7722,
+    6
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "idps_province",
+    "fields": [
+      "NOM",
+      "IDP",
+      "NEW_IDP"
+    ],
+    "template_teaser": "<!-- Columns Tooltip Template. -->\n<!-- To use, delete the .wax-tooltip opening and closing tag. -->\n<!-- Text in the value column does not wrap correctly and thus the layout will break if any line extends past the container's 280px.  If you need the lines to wrap, use tooltip_column_ii -->\n\n<div class='name'>\n\t<div class='title'>{{{NOM}}}</div>\n</div>\n<div class='details'>\n    <div class='col key'> \n        <div>IDPs, 2012:</div>\n        <div>Recent IDPs:</div>\n    </div>\n    <div class='col value'> \n        <div>{{{IDP}}}</div>\n        <div>{{{NEW_IDP}}}</div>\n    </div>\n</div>\n\n\n<style>\n.wax-tooltip {\n    font-family: \"HelveticaNeue-Light\", \"Helvetica Neue Light\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    background-color: #faf7f3;\n    width: 280px;\n}\n\n.wax-tooltip .name {\n    padding: 0 0 4px 4px;\n    border-bottom: 2px solid #cbc4b3;\n}\n\n.wax-tooltip .title {\n\tfont-weight: normal;\n    font-size: 17pt;\n    color: #624d15;\n}\n\n.wax-tooltip .subtitle {\n\tfont-weight: lighter;\n    font-size: 12pt;\n    color: #897a4f;\n}\n\n.wax-tooltip .details {\n    padding: 4px 0 4px 8px;\n    color: #666666;\n    font-size: 11pt;\n}\n\n.wax-tooltip .col {\n\tfloat: left;\n\tmargin-bottom: 4px;\n}\n\n.wax-tooltip .col > div {\n\tpadding-bottom: 2px;\n}\n\n.wax-tooltip .key {\n    padding-right: 4px;\n    font-weight: 600;\n}\n\n.wax-tooltip .emphasis {\n\tfont-weight: 600;\n\tcolor: orange;\n}\n\n\n</style>"
+  },
+  "minzoom": 0,
+  "maxzoom": 10,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "polygon",
+      "extent": [
+        16.503999839631078,
+        -13.45599926172078,
+        31.277300040527862,
+        5.386098153609162
+      ],
+      "id": "idps_province",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/project_shp/ocha_snapshot_shp/idp_by_province_subset.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "idps_province"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        18.057999959887617,
+        -13.45599873953769,
+        31.277291585581903,
+        5.386098081203286
+      ],
+      "id": "idps",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/jamesconkling/Documents/Projects/world_bank/extractives/drc/project_shp/ocha_snapshot_shp/idp_presence.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "idps"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "DRC IDPs",
+  "description": "",
+  "attribution": "",
+  "legend": ""
+}

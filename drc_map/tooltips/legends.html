@@ -1,0 +1,278 @@
+<!-- Legends -->
+
+
+<!-- table -->
+<div class='map-legend'> 
+	<!-- start copy -->
+<div class='map-legendTable'>
+	<div class='legend-name'>
+		<div class='legend-title'>Legend Title</div>
+		<div class='legend-subtitle'>A Short, Descriptive Subtitle</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span class='mineral'></span><span class='type'>Permissive</span><span class='type'>Favorable</span><span class='type'>Prospective</span></li>
+			<li><span class='mineral'>REE</span><img><img><img></li>
+			<li><span class='mineral'>Gold</span><img><img><img></li>
+			<li><span class='mineral'>Copper</span><img><img><img></li>
+			<li><span class='mineral'>Iron</span><img><img><img></li>
+			<li><span class='mineral'>Tin</span><img><img><img></li>
+		</ul>
+	</div>
+	<div class='legend-source'>Source: <a href="#">USGS</a>, 2064</div>
+	</div>
+</div>
+	<!-- end copy -->
+</div> 
+
+
+<div style='height:20px'></div>
+
+
+<!-- horizontal graduated -->
+<div class='map-legend'> 
+	<!-- start copy -->
+<div class='map-legendGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>Opium Cultivation - A Two-Line Title</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#F1EEF6;'></span>0 - 20%</li>
+			<li><span style='background:#BDC9E1;'></span>40%</li>
+			<li><span style='background:#74A9CF;'></span>60%</li>
+			<li><span style='background:#2B8CBE;'></span>80%</li>
+			<li><span style='background:#045A8D;'></span>100%</li>
+		</ul>
+	</div>
+	<div class='legend-source'>Source: <a href="#">Publication Title</a>, Institute of Studies, 2008</div>
+</div>
+	<!-- end copy -->
+</div>
+
+
+<div style='height:20px'></div>
+
+
+<!-- vertical categorized -->
+<div class='map-legend'> 
+	<!-- start copy -->
+<div class='map-legendVerticalCategorized'>
+	<div class='legend-name'>
+		<div class='legend-title'>Mineralogy</div>
+	</div>
+	<div class='legend-description'>If a description is needed, it could either be included as a short subtitle or, if longer, as 1-3 lines of text.</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FA8559;'></span>Goethite</li>
+			<li><span style='background:#B2563C;'></span>Iron</li>
+			<li><span style='background:#73402D;'></span>Alunite</li>
+			<li><span style='background:#FBE38C;'></span>Calcite</li>
+			<li><span style='background:#8596D1;'></span>Ilite</li>
+			<li><span style='background:#2B3574;'></span>Dolomite</li>
+			<li><span style='background:#6E7732;'></span>Kaolinite</li>
+			<li><span style='background:#BAC661;'></span>Chlorite</li>
+		</ul>
+	</div>
+	<div class='legend-source'>Source: <a href="#">Name of source</a>, 2011</div>
+</div>
+	<!-- end copy -->
+</div> 
+
+
+<div style='height:20px'></div>
+
+
+<!-- vertical graduated -->
+<div class='map-legend'> 
+	<!-- start copy -->
+<div class='map-legendVerticalGraduated'>
+	<div class='legend-name'>
+		<div class='legend-title'>If Horizontal Graduated Doesn't Work For You</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#FDCC8A;'></span>40% - 50%</li>
+			<li><span style='background:#FC8D59;'></span>50% - 60%</li>
+			<li><span style='background:#E34A33;'></span>60% - 70%</li>
+			<li><span style='background:#B30000;'></span>70% +</li>
+		</ul>
+	</div>
+	<div class='legend-source'>Source: <a href="#">UNDP MDG Progress Report</a>, 2010</div>
+</div>
+	<!-- end copy -->
+</div>
+
+
+
+<style>
+.map-legend {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #faf7f3;
+	color: #624d15;
+	width: 265px; /* Delete */
+	font-size: 10pt;
+}
+
+.map-legend .legend-name {
+	text-align: center;
+	line-height: 1.7em;
+	padding-bottom: 4px;
+	border-bottom: 2px solid #cbc4b3;
+	margin-bottom: 4px;
+}
+
+.map-legend .legend-title {
+	font-size: 18pt;
+}
+
+.map-legend .legend-subtitle {
+	font-size: 13pt;
+}
+
+.map-legend .legend-description {
+	font-size: 9pt;
+	padding: 0px 0px 4px 4px;
+}
+
+.map-legend .legend-source {
+	font-size: 8pt;
+	color: #999;
+	clear: both;
+}
+
+.map-legend a {
+	color: #74A9CF;
+	font-weight: normal;
+}
+
+.map-legend a:hover{
+	text-decoration: underline;
+	color: #AAAAAA;
+}
+
+.map-legend .emphasis {
+	font-weight: 600;
+	color: orange;
+}
+
+
+
+/*  Table Legend  */
+.map-legendTable .legend-scale ul {
+	margin: 0;
+	margin-bottom: 5px;
+	margin-left: 4px;
+	padding: 0;
+	float: left;
+	text-align:right;
+	list-style: none;
+}
+
+.map-legendTable .legend-scale ul li {
+	list-style: none;
+	margin-left: 0;
+	line-height: 18px;
+}
+
+.map-legendTable ul.legend-labels li .type {
+	display: block;
+	float: right;
+	height: 18px;
+	width: 70px;
+	font-size: 90%;
+	text-align: center;
+}
+
+.map-legendTable ul.legend-labels li img {
+	display: block;
+	float: right;
+	height: 18px;
+	width: 70px;
+}
+
+.map-legendTable ul.legend-labels li .mineral {
+	margin-right: 4px;
+	font-size: 90%;
+}
+
+
+/*  Horizontal Graduated Legend  */
+.map-legendGraduated .legend-scale ul {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+}
+.map-legendGraduated .legend-scale ul li {
+	display: block;
+	float: left;
+	width: 50px;
+	margin-bottom: 6px;
+	text-align: center;
+	font-size: 80%;
+	list-style: none;
+}
+.map-legendGraduated ul.legend-labels li span {
+	display: block;
+	float: left;
+	height: 15px;
+	width: 50px;
+}
+
+
+/*  Vertical Categorized Legend  */
+.map-legendVerticalCategorized .legend-scale ul {
+	margin: 0 0 0 8px;
+	margin-bottom: 5px;
+	padding: 0;
+	float: left;
+	list-style: none;
+}
+
+.map-legendVerticalCategorized .legend-scale ul li {
+	list-style: none;
+	margin-left: 0;
+	line-height: 18px;
+	margin-bottom: 2px;
+}
+
+.map-legendVerticalCategorized ul.legend-labels li span {
+	display: block;
+	float: left;
+	height: 16px;
+	width: 30px;
+	margin-right: 5px;
+	margin-left: 0;
+	border: 1px solid #999;
+}
+
+
+/*  Vertical Graduated Legend  */
+.map-legendVerticalGraduated .legend-scale ul {
+	margin: 0 0 0 8px;
+	margin-bottom: 5px;
+	padding: 0;
+	float: left;
+	list-style: none;
+}
+
+.map-legendVerticalGraduated .legend-scale ul li {
+	list-style: none;
+	margin-left: 0;
+	line-height: 20px;
+	font-size: 90%;
+}
+
+.map-legendVerticalGraduated ul.legend-labels li span {
+	display: block;
+	float: left;
+	height: 20px;
+	width: 30px;
+	margin-right: 5px;
+	margin-left: 0;
+}
+
+
+</style>
+
