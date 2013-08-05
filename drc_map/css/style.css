@@ -184,7 +184,7 @@ body { margin:0; padding:0; }
 .switcher-box {
     position: absolute;
     width: 100%;
-    left: 0px;
+    left: -1px;
     top: 56px;
     z-index: 10;
 }
@@ -213,7 +213,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', end
 }
 
 #map-ui > a {
-	font-size: 0.9em;
+	font-size: 0.8em;
 }
 
 #map-ui > a:first-letter {
@@ -233,7 +233,7 @@ background: linear-gradient(to bottom, #efedea 0%,#f7f5f2 50%,#efedea 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efedea', endColorstr='#efedea',GradientType=0 );
 }
      
-.dropdownMenu > a.active, .menu > a.active, .menu > a.radioActive {
+.switcher-box > a.active, .menu > a.active, .menu > a.radioActive {
     color: white;
     /* original: background: rgb(85,85,85); */
 	/*  white 3D effect: http://www.colorzilla.com/gradient-editor/  */    
