@@ -180,6 +180,7 @@ body { margin:0; padding:0; }
 	color: #333;
 }
 	
+
 .switcher-box {
     position: absolute;
     width: 100%;
@@ -189,10 +190,10 @@ body { margin:0; padding:0; }
 }
 
 .switcher-box > a, .menu > a {
-	font: 1em/1.5em 'OswaldBook',  "Arial Narrow", sans-serif;
+	font: 1em 'OswaldBook',  "Arial Narrow", sans-serif;
 	width: 100%;
     float: left;
-    padding: 10px 0 10px 0; /* check! */
+    padding: 11px 0 11px 0; /* check! */
     border-top: 1px solid #cbc4b3;
     border-bottom: 1px solid #cbc4b3;
     border-left: 1px solid #cbc4b3;
@@ -211,6 +212,14 @@ background: linear-gradient(to bottom, rgba(247,247,247,1) 0%,rgba(255,255,255,1
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#f7f7f7',GradientType=0 );
 }
 
+#map-ui > a {
+	font-size: 0.9em;
+}
+
+#map-ui > a:first-letter {
+	font-size: 1.3em;
+}
+
 #header:hover, .switcher-box > a:hover, .menu > a:hover {
 	/* original: background: #FAF7F3; */
 	/*  white 3D effect: http://www.colorzilla.com/gradient-editor/  */ 
@@ -224,7 +233,7 @@ background: linear-gradient(to bottom, #efedea 0%,#f7f5f2 50%,#efedea 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efedea', endColorstr='#efedea',GradientType=0 );
 }
      
-.switcher-box > a.active, .menu > a.active, .menu > a.radioActive {
+.dropdownMenu > a.active, .menu > a.active, .menu > a.radioActive {
     color: white;
     /* original: background: rgb(85,85,85); */
 	/*  white 3D effect: http://www.colorzilla.com/gradient-editor/  */    
@@ -238,12 +247,8 @@ background: linear-gradient(to bottom, rgba(85,85,85,1) 0%,rgba(95,95,95,1) 50%,
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', endColorstr='#555555',GradientType=0 );
 }
 
-.switcher-box.dropdownMenu {
+.dropdownMenu {
 	z-index: 1;
-}
-
-.switcher-box.dropdownMenu > a {
-	font-size: 1em;
 }
 
 #content .two-wide > a {
@@ -477,6 +482,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', end
 .map-legend .legend-description {
 	font-size: 9pt;
 	padding: 0px 0px 4px 4px;
+	clear: both;
 }
 
 .map-legend .legend-source {

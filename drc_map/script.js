@@ -41,6 +41,13 @@ mapLayers = {
 		text: development,
 		legend: document.getElementById('povertyLegend').innerHTML
 	},
+	mineralogy:{
+		latlon:	[-3.4,21],
+		zoom: 5,
+		id: 'helsinki.drc_mineralogy',
+		text: extractives,
+		legend: document.getElementById('mineralogyLegend').innerHTML
+	},
 	mineConcessions:{
 		latlon:	[-3.4,21],
 		zoom: 5,
@@ -55,21 +62,14 @@ mapLayers = {
 		text: extractives,
 		legend: document.getElementById('concessionsLegend').innerHTML
 	},
-	conflictMinerals:{
-		latlon:	[-2.4,26.5],
-		zoom: 6,
-		id: 'helsinki.map-s2s3eamy',
-		text: extractives,
-		legend: document.getElementById('conflictMineralsLegend').innerHTML
-	},
-	mineConcessions_ii:{
+	forestConcessions:{
 		latlon:	[-3.4,21],
 		zoom: 5,
-		id: 'helsinki.drc_concessions',
+		id: 'helsinki.drc_forestry_concessions',
 		text: extractives,
 		legend: document.getElementById('concessionsLegend').innerHTML
 	},
-	conflictMinerals_ii:{
+	conflictMinerals:{
 		latlon:	[-2.4,26.5],
 		zoom: 6,
 		id: 'helsinki.map-s2s3eamy',
@@ -141,23 +141,6 @@ var eventHandlers = {
 		//change content in #text 
 		$('#text').html(mapLayers[switcherElement.attr('id')]["text"])				
 	},
-// 	mapRadioMenu: function(e) {
-// 		e.preventDefault();
-// 		e.stopPropagation();
-// 		var elementId = $(this).attr('id');
-// 		var layer = L.mapbox.tileLayer(mapLayers[elementId]["id"])
-// 		
-// 		// toggle clicked layers on/off
-// 		//if (map.hasLayer(layer)) {
-// 		if ($(this).hasClass('active')) {
-// 			//eventHandlers.radioLayers(radioGroup)
-//             radioGroup.clearLayers();
-//             $(this).removeClass('active');
-//         } else {
-//         	radioGroup.addLayer(layer);
-//             $(this).addClass('active');
-//         }
-// 	},
 	panelCheckboxMenu: function(e) {
 		e.preventDefault();
 		e.stopPropagation();
@@ -191,8 +174,6 @@ var eventHandlers = {
 		e.stopPropagation();	
 
 		var location = this.getAttribute('data-location').split(',');
-		//why doesn't this work?
-		//var location = this.data('location').split(',');
 		var latLon = [location[0],location[1]];
 		var zoom = location[2];
 		if (latLon && zoom){
@@ -200,8 +181,8 @@ var eventHandlers = {
 		}
 	},
 	textMenuDown: function() {
-		$('.dropdownMenu').animate( { 'top': '98px' }, 150 );
-		$('#text').animate( { 'top': '145px' }, 150 );
+		$('.dropdownMenu').animate( { 'top': '96px' }, 150 );
+		$('#text').animate( { 'top': '140px' }, 150 );
 	},
 	textMenuUp: function() {
 		$('.dropdownMenu').animate( { 'top': '56px' }, 150 );

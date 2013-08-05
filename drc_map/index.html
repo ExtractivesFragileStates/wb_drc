@@ -35,9 +35,9 @@
 	<!-- Layer switcher -->
 	<!-- note: for any button that runs to two lines, to set inline style='padding: 3px 0 2px 0; line-height: 1.3em;' -->
 	<div id="map-ui" class="three-wide switcher-box">
-		  <a href="#" id="development" class="dropdown">Development</a>
-		  <a href="#" id="extractives" class="dropdown">Extractives</a>
-		  <a href="#" id="conflict" class="dropdown">Fragility</a>
+		  <a href="#" id="development" class="dropdown">DEVELOPMENT</a>
+		  <a href="#" id="extractives" class="dropdown">EXTRACTIVES</a>
+		  <a href="#" id="conflict" class="dropdown">FRAGILITY</a>
 	</div>
 	
 	<div id="development-dropdown" class="two-wide switcher-box dropdownMenu">
@@ -45,8 +45,9 @@
 		  <a href="#" id="poverty" class="panelCheckboxMenu">Poverty</a>
 	</div>
 	
-	<div id="extractives-dropdown" class="two-wide switcher-box dropdownMenu">
-		  <a href="#" id="concessions" class="addMapMenu">Industrial Mines</a>
+	<div id="extractives-dropdown" class="three-wide switcher-box dropdownMenu">
+		  <a href="#" id="mineralogy" class="panelCheckboxMenu">Mineralogy</a>
+		  <a href="#" id="concessions" class="addMapMenu">Concessions</a>
 		  <a href="#" id="conflictMinerals" class="panelCheckboxMenu">Artisanal Mines</a>
 	</div>
 	
@@ -57,17 +58,19 @@
 	
 	
 	
-	<!-- Map Menus -->
-<!-- insert for permanent radio buttons on map top left - in style file, uncomment .menu.layerMenu 
+	<!-- Map Menus - insert for permanent radio buttons on map top left - in style file, uncomment .menu.layerMenu -->
+<!-- 
 	<div class='menu permanentMenu'>
 		<a href="#" id="radioConcessions" class="mapRadioMenu">Concessions</a>
 		<a href="#" id="radioArtisanal" class="mapRadioMenu">Artisanal Mines</a>
 	</div>
  -->
+ 
 	
 	<div id='concessions-menu' class='menu layerMenu'>
 		<a href="#" id="mineConcessions" class="mapCheckboxMenu" style='padding: 3px 0 2px 0; line-height: 1.3em;'>Mineral Concessions</a>
 		<a href="#" id="oilConcessions" class="mapCheckboxMenu">Oil Concessions</a>
+		<a href="#" id="forestConcessions" class="mapCheckboxMenu" style='padding: 3px 0 2px 0; line-height: 1.3em;'>Forest<br>Concessions</a>
 	</div>
 	
 	
@@ -125,6 +128,22 @@
 </div>
 </div>
 
+<!-- Mineralogy Legend - vertical categorized -->
+<div id='mineralogyLegend' style='display:none'>
+<div class='map-legendVerticalCategorized'>
+	<div class='legend-name'>
+		<div class='legend-title'>Mineral Concessions</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#C77432;'></span>Copper Belt</li>
+			<li><span style='background:#7A7A7A;'></span>Tin Region</li>
+		</ul>
+	<div class='legend-description'>HOVER over a province for details on its mineral wealth</div>
+	</div>
+	<div class='legend-source'><b>Source:</b> <a href="#">IPIS</a> Mine Concession Data, 2010</div>
+</div>
+</div>
 
 <!-- Mine Concession Legend - vertical categorized -->
 <div id='concessionsLegend' style='display:none'>
