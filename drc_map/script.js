@@ -13,7 +13,7 @@ var development = "<p>Development Text To Come...</p>";
 
 // Build base layer, where id:[['map_id',z-index],...]
 // Set background layers w/ low z-index and label layers w/ high z-index
-baseLayer = {
+var baseLayer = {
 	latlon:	[-3.4,21],
 	zoom: 5,
 	id: [
@@ -26,71 +26,81 @@ baseLayer = {
 
 // Build map objects, accessed via each button's html id attribute.  
 //would it be better/faster to build these via a custom object constructor?
-mapLayers = {
+var mapLayers = {
 	unemployment:{
-		latlon:	[-3.4,21],
-		zoom: 5,
 		id: 'helsinki.drc_development_ii',
 		text: development,
 		legend: document.getElementById('unemploymentLegend').innerHTML
 	},
 	poverty:{
-		latlon:	[-3.4,21],
-		zoom: 5,
 		id: 'helsinki.drc_development',
 		text: development,
 		legend: document.getElementById('povertyLegend').innerHTML
 	},
 	mineralogy:{
-		latlon:	[-3.4,21],
-		zoom: 5,
 		id: 'helsinki.drc_mineralogy',
 		text: extractives,
 		legend: document.getElementById('mineralogyLegend').innerHTML
 	},
 	mineConcessions:{
-		latlon:	[-3.4,21],
-		zoom: 5,
 		id: 'helsinki.drc_concessions',
 		text: extractives,
 		legend: document.getElementById('concessionsLegend').innerHTML
 	},
 	oilConcessions:{
-		latlon:	[-3.4,21],
-		zoom: 5,
 		id: 'helsinki.drc_oil_concessions',
 		text: extractives,
 		legend: document.getElementById('concessionsLegend').innerHTML
 	},
 	forestConcessions:{
-		latlon:	[-3.4,21],
-		zoom: 5,
 		id: 'helsinki.drc_forestry_concessions',
 		text: extractives,
 		legend: document.getElementById('concessionsLegend').innerHTML
 	},
 	conflictMinerals:{
-		latlon:	[-2.4,26.5],
-		zoom: 6,
 		id: 'helsinki.map-s2s3eamy',
 		text: extractives,
 		legend: document.getElementById('conflictMineralsLegend').innerHTML
 	},
 	acled:{
-		latlon:	[-3.4,21],
-		zoom: 5,
 		id: 'helsinki.drc_acled',
 		text: conflict,
 		legend: document.getElementById('acledLegend').innerHTML
 	},
 	idps:{
-		latlon:	[-3.4,21],
-		zoom: 5,
 		id: 'helsinki.drc_idps',
 		text: conflict,
 		legend: document.getElementById('idpLegend').innerHTML
 	}
 }
+
+var radioButtons = [
+	{
+		mapId: 'helsinki.map-1itkgzof',
+		elementId: 'radioConcessions',
+		zIndex: 999
+	}// ,
+// 	{
+// 		mapId: 'helsinki.drc_concessions',
+// 		elementId: 'radioConcessions',
+// 		zIndex: 998
+// 	},
+// 	{
+// 		mapId: 'helsinki.drc_concessions',
+// 		elementId: 'mineConcessions',
+// 		zIndex: 997
+// 	},
+// 	{
+// 		mapId: 'helsinki.drc_oil_concessions',
+// 		elementId: 'oilConcessions',
+// 		zIndex: 996
+// 	},
+// 	{
+// 		mapId: 'helsinki.drc_forestry_concessions',
+// 		elementId: 'forestConcessions',
+// 		zIndex: 995
+// 	}
+]
 
 
 var eventHandlers = {
@@ -98,7 +108,6 @@ var eventHandlers = {
 		$('.dropdown').on('click', this.dropdown);
 		$('.addMapMenu').on('click', this.addMapMenu);
 		$('.mapCheckboxMenu').on('click', this.mapCheckboxMenu);
-		$('.mapRadioMenu').on('click', this.mapRadioMenu);
 		$('.panelCheckboxMenu').on('click', this.panelCheckboxMenu);
 		$('.refresher').on('click', this.refresher);
 		$('#text').on('click', '.navigate', this.navigate);
@@ -120,12 +129,11 @@ var eventHandlers = {
 		e.preventDefault();
 		e.stopPropagation();
 		var menu = $('#' + this.id + '-menu');
-		var firstChildElement = menu.children(':first');
 		
 		eventHandlers.activateDeactivate($(this));
 		eventHandlers.clearLayersLegends();
 		$('.layerMenu').hide();
-		firstChildElement.trigger('click');
+		menu.children(':first').trigger('click');
 		menu.show();
 	},
 	mapCheckboxMenu: function(e) {
@@ -140,6 +148,15 @@ var eventHandlers = {
 
 		//change content in #text 
 		$('#text').html(mapLayers[switcherElement.attr('id')]["text"])				
+	},
+	mapRadioMenu: function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		
+		//display of radioLayers is handled outside of event handlers obj - here simply display legend
+		var legendHtml = radioButtons[layerId]["legend"];
+		var mapLegend = L.mapbox.legendControl({ position:'bottomright' }).addLegend(legendHtml)
+		map.addControl(mapLegend);
 	},
 	panelCheckboxMenu: function(e) {
 		e.preventDefault();
@@ -212,9 +229,9 @@ var eventHandlers = {
 		var mapLegend = L.mapbox.legendControl({ position:'bottomright' }).addLegend(legendHtml)
 		map.addControl(mapLegend);
 
-		var layerLatLon = mapLayers[layerId]["latlon"];
-		var layerZoom = mapLayers[layerId]["zoom"];
-		map.setView(layerLatLon, layerZoom);
+// 		var layerLatLon = mapLayers[layerId]["latlon"];
+// 		var layerZoom = mapLayers[layerId]["zoom"];
+// 		map.setView(layerLatLon, layerZoom);
 	},
 	changeZ: function(layer) {
 		$('.dropdownMenu').css('z-index', 1);
@@ -274,6 +291,11 @@ $(document).ready(function() {
 	eventHandlers.init();
 });
 
+
 // bind map radio buttons to elements
-addRadioButton('helsinki.map-s2s3eamy', 'radioArtisanal', 999);
-addRadioButton('helsinki.drc_concessions', 'radioConcessions', 998);
+for(i = 0; i < radioButtons.length; i++){
+	addRadioButton(radioButtons[i]["mapId"], radioButtons[i]["elementId"], radioButtons[i]["zIndex"]);
+}
+
+// addRadioButton('helsinki.map-s2s3eamy', 'radioArtisanal', 999);
+// addRadioButton('helsinki.drc_concessions', 'radioConcessions', 998);
