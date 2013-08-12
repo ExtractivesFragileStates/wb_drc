@@ -182,29 +182,34 @@ body { margin:0; padding:0; }
 	border-left-width: 0;
 }
 
-#map-ui > a {
+#map-ui a {
 	font-size: 0.8em;
 	background: #555;/* #E7E2D6; */
 	color: #fff;
 }
 
-#map-ui > a:first-letter {
+#map-ui a:first-letter {
 	font-size: 1.3em;
 }
 
-#map-ui > a.active {
+#header:hover, .dropdownMenu a:hover, .menu a:hover, #map-ui a:hover {
+	color: #000;
+	background: #efedea;
+}
+
+#map-ui a.active {
 	color: #333;
 	background: #fff;
 	border-bottom-color: #ddd;
 }
 
-#header:hover, .dropdownMenu > a:hover, .menu > a:hover, #map-ui > a:hover {
-	color: #000;
-	background: #efedea;
-}
-     
-.dropdownMenu > a.active, .menu > a.active, .menu > a.radioActive {
+.dropdownMenu a.active, .menu a.active, .menu a.radioActive {
     color: orange;
+}
+
+#map-ui a:active, .dropdownMenu a:active, .menu a:active {
+	color: orange;
+	background: #fff;
 }
 
 .dropdownMenu {

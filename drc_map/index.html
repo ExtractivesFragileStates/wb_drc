@@ -31,44 +31,47 @@
 	
 		
 	<!-- Layer switcher -->
-	<!-- note: for any button that runs to two lines, to set inline style='padding: 3px 0 2px 0; line-height: 1.3em;' -->
-	<div id="map-ui" class="three-wide switcher-box">
-		  <a href="#" id="development" class="dropdown">DEVELOPMENT</a>
-		  <a href="#" id="extractives" class="dropdown">EXTRACTIVES</a>
-		  <a href="#" id="conflict" class="dropdown">FRAGILITY</a>
+	<!-- note: for any button that runs to two lines, to set inline style='padding: 4px 0 2px 0; line-height: 1.3em;' -->
+	<div id="map-ui" class="four-wide switcher-box">
+		<a href="#" id="environment" class="dropdown">ENVIRONMENT</a>
+		<a href="#" id="development" class="dropdown">DEVELOPMENT</a>
+		<a href="#" id="extractives" class="dropdown">EXTRACTIVES</a>
+		<a href="#" id="conflict" class="dropdown">FRAGILITY</a>
+	</div>
+	
+	<div id="environment-dropdown" class="two-wide switcher-box dropdownMenu">
+		<a href="#" id="deforestation" class="addMapMenu">Deforestation</a>
+		<a href="#" id="biodiversity" class="panelCheckboxMenu">Biodiversity</a>
 	</div>
 	
 	<div id="development-dropdown" class="two-wide switcher-box dropdownMenu">
-		  <a href="#" id="unemployment" class="panelCheckboxMenu">Unemployment</a>
-		  <a href="#" id="poverty" class="panelCheckboxMenu">Poverty</a>
+		<a href="#" id="unemployment" class="panelCheckboxMenu">Unemployment</a>
+		<a href="#" id="poverty" class="panelCheckboxMenu">Poverty</a>
 	</div>
 	
 	<div id="extractives-dropdown" class="two-wide switcher-box dropdownMenu">
-		  <a href="#" id="mineralogy" class="panelCheckboxMenu">Mineralogy</a>
-<!-- 		  <a href="#" id="concessions" class="addMapMenu">Concessions</a> -->
-		  <a href="#" id="conflictMinerals" class="panelCheckboxMenu">Artisanal Mines</a>
+		<a href="#" id="mineralogy" class="panelCheckboxMenu">Mineralogy</a>
+		<!-- 		  <a href="#" id="concessions" class="addMapMenu">Concessions</a> -->
+		<a href="#" id="conflictMinerals" class="panelCheckboxMenu">Artisanal Mines</a>
 	</div>
 	
 	<div id="conflict-dropdown" class="two-wide switcher-box dropdownMenu">
-		  <a href="#" id="acled" class="panelCheckboxMenu">Security</a>
-		  <a href="#" id="idps" class="panelCheckboxMenu">IDPs</a>
+		<a href="#" id="acled" class="panelCheckboxMenu">Security</a>
+		<a href="#" id="idps" class="panelCheckboxMenu">IDPs</a>
 	</div>
 	
 	
 	
-	<!-- Map Menus - insert for permanent radio buttons on map top left - in style file, uncomment .menu.layerMenu -->
+	<!-- Map Menu Radio Buttons - insert for permanent radio buttons on map top left, above checkbox buttons -->
 	<div class='menu permanentMenu'>
 		<a href="#" id="radioConcessions" class="">Concessions</a>
 	</div>
 
  
-	
-<!-- 
-	<div id='concessions-menu' class='menu layerMenu'>
-		<a href="#" id="mineConcessions" class="mapCheckboxMenu" style='padding: 3px 0 2px 0; line-height: 1.3em;'>Mineral Concessions</a>
-		<a href="#" id="oilConcessions" class="mapCheckboxMenu">Oil Concessions</a>
-		<a href="#" id="forestConcessions" class="mapCheckboxMenu" style='padding: 3px 0 2px 0; line-height: 1.3em;'>Forest<br>Concessions</a>
- -->
+	<!-- Map Menu Checkbox Buttons - set style='top:xx' to display box below radio buttons -->
+ 	<div id='deforestation-menu' class='menu layerMenu' style='top:90px'>
+		<a href="#" id="forestCover" class="mapCheckboxMenu">Forest Cover</a>
+		<a href="#" id="forestLoss" class="mapCheckboxMenu">Deforestation</a>
 	</div>
 	
 	

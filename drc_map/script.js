@@ -71,6 +71,21 @@ var mapLayers = {
 		id: 'helsinki.drc_idps',
 		text: conflict,
 		legend: document.getElementById('idpLegend').innerHTML
+	},
+	biodiversity:{
+		id: 'helsinki.drc_idps',
+		text: conflict,
+		legend: document.getElementById('idpLegend').innerHTML
+	},
+	forestCover:{
+		id: 'helsinki.drc_forest_cover',
+		text: conflict,
+		legend: document.getElementById('idpLegend').innerHTML
+	},
+	forestLoss:{
+		id: 'helsinki.drc_forest_deforestation',
+		text: conflict,
+		legend: document.getElementById('idpLegend').innerHTML
 	}
 }
 
