@@ -1,129 +1,11 @@
-// DRC v1.0
-
-// Map layer text -- how to access local html docs via ajax?
-var intro = "<p>Intro Text To Come...</p>";
-
-var conflict = "<p>Conflict Text To Come...</p>";
-
-var extractives = "<p>Extractives Text To Come...</p>";
-
-var development = "<p>Development Text To Come...</p>";
-
-
-
-// Build base layer, where id:[['map_id',z-index],...]
-// Set background layers w/ low z-index and label layers w/ high z-index
-var baseLayer = {
-	latlon:	[-3.4,21],
-	zoom: 5,
-	id: [
-		['helsinki.map-nsp2qpsa',-1000],
-		['helsinki.drc_labels',1000]
-		],
-	text: intro
-}
-
-
-// Build map objects, accessed via each button's html id attribute.  
-//would it be better/faster to build these via a custom object constructor?
-var mapLayers = {
-	unemployment:{
-		id: 'helsinki.drc_development_ii',
-		text: development,
-		legend: document.getElementById('unemploymentLegend').innerHTML
-	},
-	poverty:{
-		id: 'helsinki.drc_development',
-		text: development,
-		legend: document.getElementById('povertyLegend').innerHTML
-	},
-	mineralogy:{
-		id: 'helsinki.drc_mineralogy',
-		text: extractives,
-		legend: document.getElementById('mineralogyLegend').innerHTML
-	},
-	mineConcessions:{
-		id: 'helsinki.drc_concessions',
-		text: extractives,
-		legend: document.getElementById('concessionsLegend').innerHTML
-	},
-	oilConcessions:{
-		id: 'helsinki.drc_oil_concessions',
-		text: extractives,
-		legend: document.getElementById('concessionsLegend').innerHTML
-	},
-	forestConcessions:{
-		id: 'helsinki.drc_forestry_concessions',
-		text: extractives,
-		legend: document.getElementById('concessionsLegend').innerHTML
-	},
-	conflictMinerals:{
-		id: 'helsinki.map-s2s3eamy',
-		text: extractives,
-		legend: document.getElementById('conflictMineralsLegend').innerHTML
-	},
-	acled:{
-		id: 'helsinki.drc_acled',
-		text: conflict,
-		legend: document.getElementById('acledLegend').innerHTML
-	},
-	idps:{
-		id: 'helsinki.drc_idps',
-		text: conflict,
-		legend: document.getElementById('idpLegend').innerHTML
-	},
-	biodiversity:{
-		id: 'helsinki.drc_idps',
-		text: conflict,
-		legend: document.getElementById('idpLegend').innerHTML
-	},
-	forestCover:{
-		id: 'helsinki.drc_forest_cover',
-		text: conflict,
-		legend: document.getElementById('idpLegend').innerHTML
-	},
-	forestLoss:{
-		id: 'helsinki.drc_forest_deforestation',
-		text: conflict,
-		legend: document.getElementById('idpLegend').innerHTML
-	}
-}
-
-var radioButtons = [
-	{
-		mapId: 'helsinki.map-1itkgzof',
-		elementId: 'radioConcessions',
-		zIndex: 999
-	}// ,
-// 	{
-// 		mapId: 'helsinki.drc_concessions',
-// 		elementId: 'radioConcessions',
-// 		zIndex: 998
-// 	},
-// 	{
-// 		mapId: 'helsinki.drc_concessions',
-// 		elementId: 'mineConcessions',
-// 		zIndex: 997
-// 	},
-// 	{
-// 		mapId: 'helsinki.drc_oil_concessions',
-// 		elementId: 'oilConcessions',
-// 		zIndex: 996
-// 	},
-// 	{
-// 		mapId: 'helsinki.drc_forestry_concessions',
-// 		elementId: 'forestConcessions',
-// 		zIndex: 995
-// 	}
-]
-
+//   -- DRC - Map Functionality --
 
 var eventHandlers = {
 	init: function() {
 		$('.dropdown').on('click', this.dropdown);
 		$('.addMapMenu').on('click', this.addMapMenu);
 		$('.mapCheckboxMenu').on('click', this.mapCheckboxMenu);
-		$('.panelCheckboxMenu').on('click', this.panelCheckboxMenu);
+		$('.panelLayerSwitcher').on('click', this.panelLayerSwitcher);
 		$('.refresher').on('click', this.refresher);
 		$('#text').on('click', '.navigate', this.navigate);
 	},
@@ -164,16 +46,7 @@ var eventHandlers = {
 		//change content in #text 
 		$('#text').html(mapLayers[switcherElement.attr('id')]["text"])				
 	},
-	mapRadioMenu: function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		
-		//display of radioLayers is handled outside of event handlers obj - here simply display legend
-		var legendHtml = radioButtons[layerId]["legend"];
-		var mapLegend = L.mapbox.legendControl({ position:'bottomright' }).addLegend(legendHtml)
-		map.addControl(mapLegend);
-	},
-	panelCheckboxMenu: function(e) {
+	panelLayerSwitcher: function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 		var switcherElement = $(this);
@@ -195,8 +68,8 @@ var eventHandlers = {
 
 		// remove layers/legends, move dropdowns up, change text to intro, and reset view
 		eventHandlers.removeAll();
-			//remove mapRadioButtons
-			radioGroup.clearLayers();
+			//remove permanent checkbox buttons
+			checkboxGroup.clearLayers();
 		eventHandlers.textMenuUp();
 		$('#text').html(baseLayer['text']);
 		map.setView(baseLayer["latlon"], baseLayer["zoom"]);
@@ -255,8 +128,8 @@ var eventHandlers = {
 	}
 };
 
-// Map Radio Buttons
-function addRadioButton(mapId, elementId, zIndex) {
+// Map Permanent Buttons
+function addCheckboxButton(mapId, elementId, zIndex) {
 	var layer = L.mapbox.tileLayer(mapId)
     layer.setZIndex(zIndex);
 	
@@ -266,12 +139,12 @@ function addRadioButton(mapId, elementId, zIndex) {
 
         if (map.hasLayer(layer)) {
         	//map.removeLayer(layer);
-            radioGroup.removeLayer(layer);
-            $(this).removeClass('radioActive');
+            checkboxGroup.removeLayer(layer);
+            $(this).removeClass('checkboxActive');
         } else {
             //map.addLayer(layer);
-            radioGroup.addLayer(layer);
-            this.className = 'radioActive';
+            checkboxGroup.addLayer(layer);
+            this.className = 'checkboxActive';
         }
     });
 };
@@ -298,7 +171,7 @@ for(i = 0; i < baseLayer["id"].length; i++){
 $('#text').html(baseLayer["text"]);
 new L.Control.Zoom({ position: 'topleft' }).addTo(map);
 var group = L.layerGroup().addTo(map);
-var radioGroup = L.layerGroup().addTo(map);
+var checkboxGroup = L.layerGroup().addTo(map);
 $('.layerMenu').hide();
 
 // bind event functions to their elements
@@ -307,10 +180,7 @@ $(document).ready(function() {
 });
 
 
-// bind map radio buttons to elements
-for(i = 0; i < radioButtons.length; i++){
-	addRadioButton(radioButtons[i]["mapId"], radioButtons[i]["elementId"], radioButtons[i]["zIndex"]);
+// bind map permanent buttons to elements
+for(i = 0; i < checkboxButtons.length; i++){
+	addCheckboxButton(checkboxButtons[i]["mapId"], checkboxButtons[i]["elementId"], checkboxButtons[i]["zIndex"]);
 }
-
-// addRadioButton('helsinki.map-s2s3eamy', 'radioArtisanal', 999);
-// addRadioButton('helsinki.drc_concessions', 'radioConcessions', 998);

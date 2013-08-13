@@ -1,4 +1,4 @@
-<!--   DRC   v1.0 -->
+<!--   DRC    -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,36 +40,37 @@
 	</div>
 	
 	<div id="environment-dropdown" class="two-wide switcher-box dropdownMenu">
-		<a href="#" id="deforestation" class="addMapMenu">Deforestation</a>
-		<a href="#" id="biodiversity" class="panelCheckboxMenu">Biodiversity</a>
+		<a href="#" id="deforestation" class="addMapMenu">Forestry</a>
+		<a href="#" id="biodiversity" class="panelLayerSwitcher">Biodiversity</a>
 	</div>
 	
 	<div id="development-dropdown" class="two-wide switcher-box dropdownMenu">
-		<a href="#" id="unemployment" class="panelCheckboxMenu">Unemployment</a>
-		<a href="#" id="poverty" class="panelCheckboxMenu">Poverty</a>
+		<a href="#" id="unemployment" class="panelLayerSwitcher">Unemployment</a>
+		<a href="#" id="poverty" class="panelLayerSwitcher">Poverty</a>
 	</div>
 	
 	<div id="extractives-dropdown" class="two-wide switcher-box dropdownMenu">
-		<a href="#" id="mineralogy" class="panelCheckboxMenu">Mineralogy</a>
-		<!-- 		  <a href="#" id="concessions" class="addMapMenu">Concessions</a> -->
-		<a href="#" id="conflictMinerals" class="panelCheckboxMenu">Artisanal Mines</a>
+		<a href="#" id="mineralogy" class="panelLayerSwitcher">Mineralogy</a>
+		<a href="#" id="conflictMinerals" class="panelLayerSwitcher">Artisanal Mines</a>
 	</div>
 	
 	<div id="conflict-dropdown" class="two-wide switcher-box dropdownMenu">
-		<a href="#" id="acled" class="panelCheckboxMenu">Security</a>
-		<a href="#" id="idps" class="panelCheckboxMenu">IDPs</a>
+		<a href="#" id="acled" class="panelLayerSwitcher">Security</a>
+		<a href="#" id="idps" class="panelLayerSwitcher">IDPs</a>
 	</div>
 	
 	
 	
-	<!-- Map Menu Radio Buttons - insert for permanent radio buttons on map top left, above checkbox buttons -->
+	<!-- Map Menu Checkbox Buttons - insert for permanent checkbox buttons on map top left, above checkbox buttons -->
 	<div class='menu permanentMenu'>
-		<a href="#" id="radioConcessions" class="">Concessions</a>
+		<a href="#" id="checkboxMineConcessions">Mine Concessions</a>
+		<a href="#" id="checkboxTimberConcessions" style='padding: 4px 0 2px 0; line-height: 1.2em;'>Timber<br>Concessions</a>
+		<a href="#" id="checkboxOilConcessions">Oil Concessions</a>
 	</div>
 
  
-	<!-- Map Menu Checkbox Buttons - set style='top:xx' to display box below radio buttons -->
- 	<div id='deforestation-menu' class='menu layerMenu' style='top:90px'>
+	<!-- Map Menu Radio Buttons - set style='top:xx' to display box below checkbox buttons -->
+ 	<div id='deforestation-menu' class='menu layerMenu' style='top:170px'>
 		<a href="#" id="forestCover" class="mapCheckboxMenu">Forest Cover</a>
 		<a href="#" id="forestLoss" class="mapCheckboxMenu">Deforestation</a>
 	</div>
@@ -222,8 +223,7 @@
 </div>
 
 
-
-
+	<script src="content.js"></script>
 	<script src="script.js"></script>
 	</body>
 </html>
