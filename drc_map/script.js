@@ -4,7 +4,7 @@ var eventHandlers = {
 	init: function() {
 		$('.dropdown').on('click', this.dropdown);
 		$('.addMapMenu').on('click', this.addMapMenu);
-		$('.mapCheckboxMenu').on('click', this.mapCheckboxMenu);
+		$('.mapRadioMenu').on('click', this.mapRadioMenu);
 		$('.panelLayerSwitcher').on('click', this.panelLayerSwitcher);
 		$('.refresher').on('click', this.refresher);
 		$('#text').on('click', '.navigate', this.navigate);
@@ -33,7 +33,7 @@ var eventHandlers = {
 		menu.children(':first').trigger('click');
 		menu.show();
 	},
-	mapCheckboxMenu: function(e) {
+	mapRadioMenu: function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 		var switcherElement = $(this);
@@ -56,7 +56,7 @@ var eventHandlers = {
 		eventHandlers.clearLayersLegends();
 		eventHandlers.switchLayer(switcherElement);
 		
-		// hide mapCheckboxMenu
+		// hide mapRadioMenu
 		$('.layerMenu').hide();
 		
 		//change content in #text 
