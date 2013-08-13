@@ -74,18 +74,20 @@ h1, h2, h3, h4, h5, h6 {
 }
     
 h1 {
-    font-family: 'OswaldBook', "Arial Narrow", sans-serif;
+    font-family: 'OpenSans', sans-serif;
     line-height: 1em;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 a {
-    color:#00daff;
+    cursor: pointer;
+    color:#17C3E0;
     text-decoration: underline;
+    font-weight: bold;
 }
 
 a:hover {
-	color: #61A5B1;
+	color: #A3DAE4;
 }
 
 
@@ -99,11 +101,12 @@ a:hover {
 
 h1 {
     display: block;
-    margin: 20px 0;
+    margin: 14px 0 4px;
+    font-weight: bold;
 }
 
 p {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 }
 
 body > div {
@@ -136,7 +139,7 @@ body { margin:0; padding:0; }
 	top: 0;
 	left: 0;
 	bottom:0;
-	width:336px; /* content width should be evenly divisible by 2,3,4 */
+	width:360px;
 	background:rgb(250,247,243);
 	background:rgba(250,247,243,0.9);
     border-right: 4px solid #cbc4b3;
@@ -168,6 +171,7 @@ body { margin:0; padding:0; }
 
 .switcher-box a, .menu a {
 	font-family: 'OswaldBook',  "Arial Narrow", sans-serif;
+	font-weight: normal;
     float: left;
     padding: 11px 0 11px 0; 
     border: 1px solid #BBB;
@@ -219,23 +223,27 @@ body { margin:0; padding:0; }
 
 
 #content .two-wide > a {
-	width: 167px; 
+	width: 179px; 
+}
+
+#content .two-wide > a:last-child {
+	width: 180px; 
 }
 
 #content .three-wide > a {
-	width: 111px;
+	width: 119px;
 }
 
 #content .three-wide > a:last-child {
-	width: 112px;
+	width: 120px;
 }
 
 #content .four-wide > a {
-	width: 83px;
+	width: 89px;
 }
 
 #content .four-wide > a:last-child {
-	width: 84px;
+	width: 90px;
 }
 
     
@@ -245,8 +253,8 @@ body { margin:0; padding:0; }
 	overflow-y:auto;
 	top: 100px;
 	left: 0;
-	bottom:10px;
-	width:310px; /* 330 - 20 padding*/
+	bottom: 10px;
+	width: auto;
 	padding: 10px;
 	font-size: 9pt;
 	z-index: 2;
@@ -264,11 +272,13 @@ body { margin:0; padding:0; }
 }
 
 #text .navigate {
-	text-decoration: none;
+	cursor: pointer;
+	font-weight: bold;
+	color: #ffa500;
 }
 
 #text .navigate:hover {
-	text-decoration: underline;
+	color: #EECD8E;
 }
 
 
@@ -282,7 +292,7 @@ body { margin:0; padding:0; }
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
     position:absolute;
     top:40px;
-    left: 340px;
+    left: 366px;
 }
 
 .menu > a {
@@ -592,7 +602,7 @@ body { margin:0; padding:0; }
 /*  Zoom Control  */
 .leaflet-control-zoom{
 	top: -4px;
-	left: 335px;
+	left: 360px;
 	}
 	
 .leaflet-control-zoom-in{
