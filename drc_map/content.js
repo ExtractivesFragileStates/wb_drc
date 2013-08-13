@@ -1,4 +1,4 @@
-//   -- DRC - Map Content --
+//   -- DRC -slim: no permanent checkbox buttons Map Content --
 
 // Map layer text -- how to access local html docs via ajax?
 var intro = "<p>Intro Text To Come...</p>";
@@ -88,26 +88,3 @@ var mapLayers = {
 		legend: document.getElementById('idpLegend').innerHTML
 	}
 }
-
-var checkboxButtons = [
-// 	{
-// 		mapId: 'helsinki.map-1itkgzof',
-// 		elementId: 'checkboxConcessions',
-// 		zIndex: 999
-// 	},
-	{
-		mapId: 'helsinki.drc_concessions',
-		elementId: 'checkboxMineConcessions',
-		zIndex: 997
-	},
-	{
-		mapId: 'helsinki.drc_oil_concessions',
-		elementId: 'checkboxOilConcessions',
-		zIndex: 996
-	},
-	{
-		mapId: 'helsinki.drc_forestry_concessions',
-		elementId: 'checkboxTimberConcessions',
-		zIndex: 995
-	}
-]

@@ -1,10 +1,10 @@
-//   -- DRC - Map Functionality --
+//   -- DRC slim: no permanent checkbox buttons- Map Functionality --
 
 var eventHandlers = {
 	init: function() {
 		$('.dropdown').on('click', this.dropdown);
 		$('.addMapMenu').on('click', this.addMapMenu);
-		$('.mapCheckboxMenu').on('click', this.mapCheckboxMenu);
+		$('.mapRadioMenu').on('click', this.mapRadioMenu);
 		$('.panelLayerSwitcher').on('click', this.panelLayerSwitcher);
 		$('.refresher').on('click', this.refresher);
 		$('#text').on('click', '.navigate', this.navigate);
@@ -33,7 +33,7 @@ var eventHandlers = {
 		menu.children(':first').trigger('click');
 		menu.show();
 	},
-	mapCheckboxMenu: function(e) {
+	mapRadioMenu: function(e) {
 		e.preventDefault();
 		e.stopPropagation();
 		var switcherElement = $(this);
@@ -56,7 +56,7 @@ var eventHandlers = {
 		eventHandlers.clearLayersLegends();
 		eventHandlers.switchLayer(switcherElement);
 		
-		// hide mapCheckboxMenu
+		// hide map Menu
 		$('.layerMenu').hide();
 		
 		//change content in #text 
@@ -68,8 +68,6 @@ var eventHandlers = {
 
 		// remove layers/legends, move dropdowns up, change text to intro, and reset view
 		eventHandlers.removeAll();
-			//remove permanent checkbox buttons
-			checkboxGroup.clearLayers();
 		eventHandlers.textMenuUp();
 		$('#text').html(baseLayer['text']);
 		map.setView(baseLayer["latlon"], baseLayer["zoom"]);
@@ -128,27 +126,6 @@ var eventHandlers = {
 	}
 };
 
-// Map Permanent Buttons
-function addCheckboxButton(mapId, elementId, zIndex) {
-	var layer = L.mapbox.tileLayer(mapId)
-    layer.setZIndex(zIndex);
-	
-    $('#' + elementId).on('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (map.hasLayer(layer)) {
-        	//map.removeLayer(layer);
-            checkboxGroup.removeLayer(layer);
-            $(this).removeClass('checkboxActive');
-        } else {
-            //map.addLayer(layer);
-            checkboxGroup.addLayer(layer);
-            this.className = 'checkboxActive';
-        }
-    });
-};
-
 
 
 // Initialize Map
@@ -167,20 +144,13 @@ for(i = 0; i < baseLayer["id"].length; i++){
 	map.addLayer(L.mapbox.tileLayer(baseLayer["id"][i][0], {zIndex: baseLayer["id"][i][1]} ));
 }
 
-// Add Intro Text, Zoom Control, Initialize an empty Layer Group, and hide all non-permanent menus
+// Add Intro Text, Zoom Control, Initialize an empty Layer Group
 $('#text').html(baseLayer["text"]);
 new L.Control.Zoom({ position: 'topleft' }).addTo(map);
 var group = L.layerGroup().addTo(map);
-var checkboxGroup = L.layerGroup().addTo(map);
 $('.layerMenu').hide();
 
 // bind event functions to their elements
 $(document).ready(function() {
 	eventHandlers.init();
 });
-
-
-// bind map permanent buttons to elements
-for(i = 0; i < checkboxButtons.length; i++){
-	addCheckboxButton(checkboxButtons[i]["mapId"], checkboxButtons[i]["elementId"], checkboxButtons[i]["zIndex"]);
-}
