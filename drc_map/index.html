@@ -33,8 +33,8 @@
 	<!-- Layer switcher -->
 	<!-- note: for any button that runs to two lines, to set inline style='padding: 4px 0 2px 0; line-height: 1.3em;' -->
 	<div id="map-ui" class="four-wide switcher-box">
-		<a href="#" id="environment" class="dropdown">ENVIRONMENT</a>
 		<a href="#" id="development" class="dropdown">DEVELOPMENT</a>
+		<a href="#" id="environment" class="dropdown">ENVIRONMENT</a>
 		<a href="#" id="extractives" class="dropdown">EXTRACTIVES</a>
 		<a href="#" id="conflict" class="dropdown">FRAGILITY</a>
 	</div>
@@ -130,6 +130,51 @@
 </div>
 </div>
 
+
+
+<!-- Forestry - vertical categorized -->
+<div id='forestryLegend' style='display:none'>
+<div class='map-legendVerticalCategorized'>
+	<div class='legend-name'>
+		<div class='legend-title'>Forestry</div>
+	</div>
+	<div class='legend-scale'>
+		<ul class='legend-labels'>
+			<li><span style='background:#F6F2B4;'></span>Woodland</li>
+			<li><span style='background:#9CA278;'></span>Primary Forest</li>
+			<li><span style='background:#CCD397;'></span>Secondary Forest</li>
+			<li><span style='background:#FFB900;'></span>Forest Loss, '00 - '05</li>
+			<li><span style='background:#D94727;'></span>Forest Loss, '05 - '10</li>
+		</ul>
+	</div>
+	<div class='legend-source'><em>Source:</em> <a href="http://www.osfac.net/index.php?lang=en&Itemid=135">OSFAC</a></div>
+</div>
+</div>
+
+
+<!-- Biodiversity - vertical categorized -->
+<div id='biodiversityLegend' style='display:none'>
+<div class='map-legendVerticalCategorized'>
+	<div class='legend-name'>
+		<div class='legend-title'>Biodiversity Hotspots</div>
+	</div>
+	<div class='legend-scale'>
+	<div class='legend-description'>
+		<div><strong>Criteria for hotspot regions</strong></div>
+		<ul>
+			<li>• Contains at least 1,500 species of <br>endemic vascular plants (> 0.5% of the world's total)</li>
+			<li>• Has lost at least 70% of its original habitat</li>
+		</ul>
+	</div>
+		<ul class='legend-labels'>
+			<li><img src='https://dl.dropboxusercontent.com/u/49790262/drc_biodiversity_icon_16_30.png' style='height:16px; width:30px; border:1px solid #CCC; margin-right: 5px;'><strong>Eastern Afromontane Archipelago</strong></li> <!-- The box here is 30px wide, 16px high, 1px border -->
+		</ul>
+	</div>
+	<div class='legend-source'><em>Source:</em> <a href="http://unocha.org/drc/">Conservation International</a></div>
+</div>
+</div>
+
+
 <!-- Mineralogy Legend - vertical categorized -->
 <div id='mineralogyLegend' style='display:none'>
 <div class='map-legendVerticalCategorized'>
@@ -138,8 +183,8 @@
 	</div>
 	<div class='legend-scale'>
 		<ul class='legend-labels'>
-			<li><span style='background:#C77432;'></span>Copper Belt</li>
-			<li><span style='background:#7A7A7A;'></span>Tin Region</li>
+			<li><img src='https://dl.dropboxusercontent.com/u/49790262/drc_tin_icon_16_30.png' style='height:16px; width:30px; border:1px solid #CCC; margin-right: 5px;'></span>Tin Region</li>
+			<li><img src='https://dl.dropboxusercontent.com/u/49790262/drc_copper_icon_16_30.png' style='height:16px; width:30px; border:1px solid #CCC; margin-right: 5px;'></span>Copper Belt</li>
 		</ul>
 	<div class='legend-description'>HOVER over a province for details on its mineral wealth</div>
 	</div>

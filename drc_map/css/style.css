@@ -56,7 +56,7 @@ table {
 
 
 
-/* Typography */
+/******************************* Typography *******************************/
 
 body,
 input,
@@ -74,18 +74,36 @@ h1, h2, h3, h4, h5, h6 {
 }
     
 h1 {
-    font-family: 'OswaldBook', "Arial Narrow", sans-serif;
+    font-family: 'OpenSans', sans-serif;
     line-height: 1em;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
+strong {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+sup, sub {
+   vertical-align: baseline;
+   position: relative;
+   top: -0.4em;
+   font-size: 0.8em;
+}
+
+sub { top: 0.4em; }
+
+em { font-style: italic; }
+
 a {
-    color:#00daff;
+    cursor: pointer;
+    color:#17C3E0;
     text-decoration: underline;
+    font-weight: bold;
 }
 
 a:hover {
-	color: #61A5B1;
+	color: #A3DAE4;
 }
 
 
@@ -95,15 +113,16 @@ a:hover {
 
 
 
-/* Layout */
+/******************************* Layout *******************************/
 
 h1 {
     display: block;
-    margin: 20px 0;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
 p {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 }
 
 body > div {
@@ -112,6 +131,8 @@ body > div {
 }
 
 body { margin:0; padding:0; }
+
+.clear { clear: both; }
 
 #map { 
 	position:absolute; 
@@ -136,7 +157,7 @@ body { margin:0; padding:0; }
 	top: 0;
 	left: 0;
 	bottom:0;
-	width:336px; /* content width should be evenly divisible by 2,3,4 */
+	width:360px;
 	background:rgb(250,247,243);
 	background:rgba(250,247,243,0.9);
     border-right: 4px solid #cbc4b3;
@@ -156,6 +177,7 @@ body { margin:0; padding:0; }
 	font-weight: 800;
 	text-align: center;
 	color: #333;
+	cursor: pointer;
 }
 	
 .switcher-box {
@@ -168,6 +190,7 @@ body { margin:0; padding:0; }
 
 .switcher-box a, .menu a {
 	font-family: 'OswaldBook',  "Arial Narrow", sans-serif;
+	font-weight: normal;
     float: left;
     padding: 11px 0 11px 0; 
     border: 1px solid #BBB;
@@ -219,25 +242,32 @@ body { margin:0; padding:0; }
 
 
 #content .two-wide > a {
-	width: 167px; 
+	width: 179px; 
+}
+
+#content .two-wide > a:last-child {
+	width: 180px; 
 }
 
 #content .three-wide > a {
-	width: 111px;
+	width: 119px;
 }
 
 #content .three-wide > a:last-child {
-	width: 112px;
+	width: 120px;
 }
 
 #content .four-wide > a {
-	width: 83px;
+	width: 89px;
 }
 
 #content .four-wide > a:last-child {
-	width: 84px;
+	width: 90px;
 }
 
+
+
+/******************************* Text *******************************/
     
 #text {
 	position: absolute;
@@ -245,8 +275,8 @@ body { margin:0; padding:0; }
 	overflow-y:auto;
 	top: 100px;
 	left: 0;
-	bottom:10px;
-	width:310px; /* 330 - 20 padding*/
+	bottom: 10px;
+	width: auto;
 	padding: 10px;
 	font-size: 9pt;
 	z-index: 2;
@@ -264,25 +294,141 @@ body { margin:0; padding:0; }
 }
 
 #text .navigate {
-	text-decoration: none;
+	cursor: pointer;
+	font-weight: bold;
+	color: #ffa500;
 }
 
 #text .navigate:hover {
-	text-decoration: underline;
+	color: #EECD8E;
+}
+
+.cmBox {
+	margin-left: 12px;
+	border-left: 2px solid #555;
+	padding-left: 8px;
+}
+
+.cmInitiative {
+	position: relative;
+}
+
+.cmInitiative img {
+	position: absolute;
+	top: 0.5em;
+	left: -1.05em;
+}
+
+.cmDescription {
+	font-size: 0.9em;
+	line-height: 1.5em;
+}
+
+.rotate {
+-webkit-transform: rotate(-90deg);
+-moz-transform: rotate(-90deg);
+-ms-transform: rotate(-90deg);
+-o-transform: rotate(-90deg);
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.upstream {
+	position: absolute;
+	left: -2.5em;
+	top: 2em;
+}
+
+.downstream {
+	position: absolute;
+	left: -3.5em;
+	top: 26em;
+}
+
+
+/******************************* Dashboard *******************************/
+.dashboard {
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.dashboard li {
+	position: relative;
+	border-bottom: 1px solid #ccc;
+}
+
+.dashboard li .key {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-weight: bold;
+}
+
+.dashboard li .val {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+	/* GDP/HDI & World Bank Stats */
+.majorStats, .wbStats {
+	height: 120px; 
+	float: left;
+}
+
+.majorStats {
+	width: 45%;
+	padding-right: 4px;
+	border-right: 1px solid #ccc;
+	margin-right: 4px;
+}
+
+.wbStats {
+	width: 52%;
+}
+
+.majorStats li {
+	height: 50%;
+}
+
+.wbStats li {
+	height: 25%;
+}
+
+.majorStats li .key {
+	font-size: 3.2em;
+	bottom: 11px;
+	letter-spacing: -0.1em;
+}
+
+	/* EITI Stats */
+.eitiStats span.title {
+	letter-spacing: -0.1em;
+	bottom: -6px;
+}
+
+.eitiStats span.key.title {
+	font-size: 1.6em;
+}
+
+.eitiStats {
+	clear: both;
+	height: 192px; /* 30 * n of li + bottom margin */
+}
+
+.eitiStats li {
+	height: 15%;
 }
 
 
 
 
-
-
-/*  Menus: displayed on map, not in content bar  */
+/******************************* Menus: displayed on map, not in content bar *******************************/
 
 .menu{
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
     position:absolute;
     top:40px;
-    left: 340px;
+    left: 366px;
 }
 
 .menu > a {
@@ -309,7 +455,7 @@ body { margin:0; padding:0; }
 
 
 
-/*  Tooltips  */
+/******************************* Tooltips *******************************/
 
 .map-tooltip {
     border:none;
@@ -413,7 +559,7 @@ body { margin:0; padding:0; }
 
 
 
-/*  Legend  */
+/******************************* Legends *******************************/
 
 .map-legend {
 	font: 10pt "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -589,10 +735,14 @@ body { margin:0; padding:0; }
 
 
 
-/*  Zoom Control  */
+/******************************* Zoom Control *******************************/
 .leaflet-control-zoom{
 	top: -4px;
-	left: 335px;
+	left: 360px;
+	}
+	
+.leaflet-control-zoom a:hover{
+	color: orange;
 	}
 	
 .leaflet-control-zoom-in{
@@ -630,7 +780,7 @@ body { margin:0; padding:0; }
 
 
 
-/*  Share  */
+/******************************* Share Button *******************************/
 
 .map-share h3 {
     margin: 0px 0px 10px;
@@ -723,7 +873,7 @@ body { margin:0; padding:0; }
 
 
 
-/* Animation */
+/******************************* Animation *******************************/
 
 .map-tile-loaded {
     -webkit-animation-name:               fade-in;
