@@ -96,6 +96,7 @@ var eventHandlers = {
 	removeAll: function() {
 		eventHandlers.clearLayersLegends();
 		$('.active').removeClass('active');
+		$('.checkboxActive').removeClass('checkboxActive');
 		$('.layerMenu').hide();
 	},
 	activateDeactivate: function(button) {

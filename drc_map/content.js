@@ -29,7 +29,8 @@ var baseLayer = {
 	latlon:	[-4.062,15.842],
 	zoom: 5,
 	id: [
-		['helsinki.map-nsp2qpsa',-1000],
+		['helsinki.drc_base_layer',-1000],
+		['helsinki.drc_base_layer_low_z',-999],
 		['helsinki.drc_labels',1000]
 		],
 	text: intro
@@ -70,7 +71,7 @@ var mapLayers = {
 		legend: document.getElementById('concessionsLegend').innerHTML
 	},
 	conflictMinerals:{
-		id: 'helsinki.map-s2s3eamy',
+		id: 'helsinki.map-z2x5mbb1',
 		text: artisanalMinesText,
 		legend: document.getElementById('conflictMineralsLegend').innerHTML
 	},
