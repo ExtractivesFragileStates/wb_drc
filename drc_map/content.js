@@ -29,8 +29,7 @@ var baseLayer = {
 	latlon:	[-4.062,15.842],
 	zoom: 5,
 	id: [
-		['helsinki.drc_base_layer',-1000],
-		['helsinki.drc_base_layer_low_z',-999],
+		['helsinki.map-co3d3zgz',-1000],
 		['helsinki.drc_labels',1000]
 		],
 	text: intro
