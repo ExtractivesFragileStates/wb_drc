@@ -1,4 +1,4 @@
 wb_drc
 ======
 
-World Bank: mapping extractives in fragile status.  DRC site template
+World Bank: mapping extractives in fragile states.  DRC site template
